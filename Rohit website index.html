@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Shah - Civil Engineering Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --bg-dark: #111827;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+        header {
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* Gradient with transparency */
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(30, 58, 138, 0.8) 100%);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: url('bg.jpg') center/cover no-repeat;
+    opacity: 0.5; /* Increased for better visibility */
+}
+        
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .profile-info h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        
+        .profile-info h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .contact-info a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        nav {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: var(--transition);
+        }
+        
+        nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        nav ul li {
+            padding: 0 0.5rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var (--text-dark);
+            font-weight: 500;
+            padding: 1rem 0.75rem;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0.75rem;
+            left: 0.75rem;
+            right: 0.75rem;
+            height: 2px;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a:hover::after, nav ul li a.active::after {
+            transform: scaleX(1);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+        
+        section {
+            padding: 6rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+        
+        #about {
+            background-color: var(--bg-white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .skills-container {
+            margin-top: 4rem;
+        }
+        
+        .skills-container h3 {
+            font-size: 1.75rem;
+            color: var (--text-dark);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-item {
+            background-color: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .skill-item h4 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .skill-item h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+        
+        .skill-item p {
+            color: var (--text-light);
+            line-height: 1.7;
+        }
+        
+        #experience {
+    background-color: var(--bg-light);
+    padding: 6rem 2rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    width: 50%;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.timeline-item.right {
+    justify-content: flex-start;
+    text-align: left;
+    left: 50%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 20px;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.timeline-item.left::before {
+    right: -10px;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+.timeline-icon {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 2;
+}
+
+.timeline-content {
+    background-color: var(--bg-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.timeline-content ul {
+    margin-left: 1.5rem;
+    color: var(--text-light);
+}
+
+.timeline-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+        
+        #projects {
+            background-color: var(--bg-white);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .project-card {
+            background-color: var(--bg-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .project-image-container {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-info {
+            padding: 2rem;
+        }
+        
+        .project-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-info h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .project-info ul {
+            margin-left: 1.5rem;
+            color: var (--text-light);
+        }
+        
+        .project-info ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        #education {
+            background-color: var (--bg-light);
+        }
+
+        .education-grid {
+    display: grid; /* Enables grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensures items are side by side */
+    gap: 2rem; /* Adds spacing between items */
+}
+        
+        .education-item {
+            background-color: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var (--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .education-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .education-item:hover::before {
+            width: 8px;
+        }
+        
+        .education-item h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .education-item p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-item .degree {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .education-item .period {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+        
+        .coursework {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .coursework h4 {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        #contact {
+            background-color: var(--bg-white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-details p, .contact-details a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary-color);
+        }
+        
+        .contact-form {
+            background-color: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            background-color: var(--bg-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-section {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-white);
+                flex-direction: column;
+                box-shadow: var(--shadow-md);
+                z-index: 100;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+            }
+            
+            nav ul li a::after {
+                display: none;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 22px;
+            }
+            
+            .left::after, .right::after {
+                left: 22px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+            
+            .profile-info h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px); /* Blurs the background */
+        }
+
+        .modal-content {
+            background: none; /* Remove the white background */
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: none; /* Remove the shadow */
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(20px); /* Add a stronger blur effect */
+            color: white; /* Ensure text is visible on the blurred background */
+        }
+
+        .photo-gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white; /* Ensure the close button is visible */
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: var(--primary-color);
+        }
+
+        .tab-button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab-button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Floating Icons */
+        .floating-icons {
+            position: absolute; /* Position relative to the About Me section */
+            top: 800px; /* Offset by 200px from the top of the About Me section */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 200px); /* Adjust height to account for the offset */
+            pointer-events: none; /* Prevent interaction */
+            overflow: hidden;
+            z-index: 100; /* Ensure it overlays other content */
+        }
+
+        .floating-icons i {
+            position: absolute;
+            font-size: 1.5rem; /* Smaller size */
+            opacity: 0.8;
+            animation: float-random 6s infinite ease-in-out; /* Faster animation */
+            color: rgba(255, 255, 255, 0.8); /* Default color */
+        }
+
+        /* Add random colors to icons */
+        .floating-icons .fa-hard-hat { color: #ff6b6b; }
+        .floating-icons .fa-drafting-compass { color: #6b5b95; }
+        .floating-icons .fa-ruler-combined { color: #88b04b; }
+        .floating-icons .fa-tools { color: #f7cac9; }
+        .floating-icons .fa-building { color: #92a8d1; }
+        .floating-icons .fa-bridge { color: #ffcc5c; }
+        .floating-icons .fa-road { color: #d5a6bd; }
+        .floating-icons .fa-compass { color: #034f84; }
+        .floating-icons .fa-cogs { color: #f7786b; }
+        .floating-icons .fa-wrench { color: #c94c4c; }
+        .floating-icons .fa-truck { color: #ff6f61; }
+        .floating-icons .fa-hammer { color: #6b4226; }
+
+        /* Random floating animation */
+        @keyframes float-random {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(100px, -60px); /* Increased movement */
+            }
+            50% {
+                transform: translate(-100px, 100px); /* Increased movement */
+            }
+            75% {
+                transform: translate(60px, -100px); /* Increased movement */
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Random positions for icons */
+        .floating-icons .fa-hard-hat { top: 10%; left: 20%; animation-delay: 0s; }
+        .floating-icons .fa-drafting-compass { top: 30%; left: 50%; animation-delay: 1s; }
+        .floating-icons .fa-ruler-combined { top: 50%; left: 70%; animation-delay: 2s; }
+        .floating-icons .fa-tools { top: 70%; left: 30%; animation-delay: 3s; }
+        .floating-icons .fa-building { top: 20%; left: 80%; animation-delay: 4s; }
+        .floating-icons .fa-bridge { top: 60%; left: 10%; animation-delay: 5s; }
+        .floating-icons .fa-road { top: 40%; left: 90%; animation-delay: 6s; }
+        .floating-icons .fa-compass { top: 80%; left: 50%; animation-delay: 7s; }
+        .floating-icons .fa-cogs { top: 15%; left: 60%; animation-delay: 8s; }
+        .floating-icons .fa-wrench { top: 75%; left: 20%; animation-delay: 9s; }
+        .floating-icons .fa-truck { top: 25%; left: 40%; animation-delay: 10s; }
+        .floating-icons .fa-hammer { top: 65%; left: 70%; animation-delay: 11s; }
+
+        /* Helmet Icon */
+.scroll-helmet {
+    position: absolute; /* Change to absolute to scroll with the page */
+    top: -6.25rem; /* Start off-screen */
+    left: 8.125rem; /* Position on the left */
+    font-size: 4rem; /* Increased size */
+    color: white; /* White helmet icon */
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transition for appearing */
+    opacity: 0; /* Initially hidden */
+}
+
+.scroll-helmet.visible {
+    top: 270px; /* Position it in view when scrolling */
+    opacity: 1; /* Make it visible */
+}
+
+/* General Media Queries */
+
+/* For screens smaller than 992px (Tablets and smaller devices) */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack contact form and info vertically */
+    }
+
+    .profile-section {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contact-info {
+        justify-content: center;
+    }
+
+    .timeline {
+        padding: 0 1rem;
+    }
+
+    .timeline-item {
+        width: 100%; /* Make timeline items full width */
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .timeline::after {
+        left: 20px; /* Adjust timeline line position */
+    }
+
+    .timeline-item.left::before,
+    .timeline-item.right::before {
+        left: 10px; /* Adjust timeline dots */
+    }
+
+    .timeline-icon {
+        left: 10px; /* Adjust timeline icons */
+    }
+
+    .timeline-content {
+        margin-left: 50px; /* Add spacing for timeline content */
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .mobile-menu-btn {
+        display: block; /* Show mobile menu button */
+    }
+
+    nav ul {
+        display: none; /* Hide navigation links */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-white);
+        flex-direction: column;
+        box-shadow: var(--shadow-md);
+        z-index: 100;
+    }
+
+    nav ul.active {
+        display: flex; /* Show navigation links when active */
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem;
+    }
+
+    nav ul li a::after {
+        display: none;
+    }
+}
+
+/* For screens smaller than 768px (Mobile devices) */
+@media (max-width: 768px) {
+    .profile-info h1 {
+        font-size: 2.5rem; /* Reduce font size for profile name */
+    }
+
+    .profile-info h2 {
+        font-size: 1.2rem; /* Reduce font size for profile title */
+    }
+
+    .about-content {
+        grid-template-columns: 1fr; /* Stack about section content */
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr; /* Stack skills vertically */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack project cards vertically */
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr; /* Stack education items vertically */
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack contact form and info vertically */
+    }
+
+    .scroll-down {
+        font-size: 1.5rem; /* Reduce scroll-down icon size */
+    }
+
+    .timeline::after {
+        left: 15px; /* Adjust timeline line position */
+    }
+
+    .timeline-item {
+        padding-left: 50px; /* Add spacing for timeline items */
+    }
+
+    .timeline-item::before {
+        left: 10px; /* Adjust timeline dots */
+    }
+
+    .timeline-icon {
+        left: 10px; /* Adjust timeline icons */
+    }
+
+    .timeline-content {
+        margin-left: 40px; /* Add spacing for timeline content */
+    }
+}
+
+/* For screens smaller than 576px (Small mobile devices) */
+@media (max-width: 576px) {
+    .profile-image-container {
+        width: 200px; /* Reduce profile image size */
+        height: 200px;
+    }
+
+    .profile-info h1 {
+        font-size: 2rem; /* Further reduce font size for profile name */
+    }
+
+    .profile-info h2 {
+        font-size: 1rem; /* Further reduce font size for profile title */
+    }
+
+    .contact-info a {
+        font-size: 0.9rem; /* Reduce font size for contact links */
+        padding: 0.5rem; /* Adjust padding */
+    }
+
+    .timeline-content {
+        margin-left: 30px; /* Adjust spacing for timeline content */
+    }
+
+    .timeline-item {
+        padding-left: 40px; /* Adjust padding for timeline items */
+    }
+
+    .scroll-down {
+        font-size: 1.2rem; /* Further reduce scroll-down icon size */
+    }
+}
+
+/* Highway Journey Styles */
+.highway-journey {
+    position: relative;
+    padding: 4rem 0; /* Add padding to center the highway vertically */
+    margin-top: 2rem;
+}
+
+.highway {
+    position: relative;
+    height: 100px;
+    background-color: #333; /* Highway color */
+    border-radius: 50px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.highway-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #f5f5f5; /* Dashed line color */
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: moveLine 15s linear infinite;
+}
+
+.highway-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(90deg, #f5f5f5 0px, #f5f5f5 50px, transparent 50px, transparent 100px);
+}
+
+
+.vehicle {
+    position: absolute;
+    top: 50%; /* Center the car vertically on the highway */
+    left: 0;
+    width: 60px;
+    height: 40px;
+    background-color: #1d4ed8; /* Car color */
+    border-radius: 10px;
+    z-index: 2;
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    animation: driveVehicle 15s linear infinite;
+}
+
+.vehicle::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 30px;
+    height: 15px;
+    background-color: #1d4ed8;
+    border-radius: 10px 10px 0 0;
+}
+
+.vehicle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #222;
+    border-radius: 50%;
+    box-shadow: 30px 0 0 #222;
+}
+
+.journey-points {
+    position: relative;
+    margin-top: 6rem; /* Add spacing above the highway */
+    padding-bottom: 2rem;
+}
+
+.journey-point {
+    position: relative;
+    display: flex;
+    margin-bottom: 6rem;
+    z-index: 2;
+}
+
+.journey-point:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.journey-point:last-child {
+    margin-bottom: 0;
+}
+
+.journey-milestone {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #2563eb; /* Milestone color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    z-index: 3;
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.journey-milestone:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgba(37, 99, 235, 0.2), 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.journey-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    margin: 0 2rem;
+    transition: transform 0.3s ease;
+}
+
+.journey-content:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.journey-content h3 {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.journey-content h4 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.journey-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Animation for highway line */
+@keyframes moveLine {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Animation for car movement */
+@keyframes driveVehicle {
+    0% {
+        left: -60px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+#leadership {
+    background-color: var(--bg-light);
+    padding: 6rem 2rem;
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.leadership-item {
+    background-color: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.leadership-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.leadership-item h3 {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.leadership-item .duration {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.leadership-item p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <div class="profile-section">
+            <div class="profile-image-container">
+                <img src="profile.jpg" alt="Rohit Shah" class="profile-image">
+            </div>
+            <div class="profile-info">
+                <h1>Rohit Shah</h1>
+                <h2>Civil Engineer & Infrastructure Designer</h2>
+                <p>Building sustainable infrastructure through innovative design and precise execution</p>
+                <div class="contact-info">
+                    <a href="tel:628-235-9113"><i class="fas fa-phone"></i> 628-235-9113</a>
+                    <a href="mailto:rohitshah15@outlook.com"><i class="fas fa-envelope"></i> rohitshah15@outlook.com</a>
+                    <a href="https://www.linkedin.com/in/rohit-shah-82925421b/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="floating-icons">
+        <i class="fas fa-hard-hat helmet-icon"></i>
+        <i class="fas fa-drafting-compass"></i>
+        <i class="fas fa-ruler-combined"></i>
+        <i class="fas fa-tools"></i>
+        <i class="fas fa-building"></i>
+        <i class="fas fa-bridge"></i>
+        <i class="fas fa-road"></i>
+        <i class="fas fa-compass"></i>
+        <i class="fas fa-cogs"></i>
+        <i class="fas fa-wrench"></i>
+        <i class="fas fa-truck"></i>
+        <i class="fas fa-hammer"></i>
+    </div>
+    <div id="scroll-helmet" class="scroll-helmet">
+        <i class="fas fa-hard-hat"></i>
+    </div>
+    <div class="scroll-down" id="scrollDown">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</header>
+    
+    <nav id="mainNav">
+        <div class="nav-container">
+            <a href="#" class="logo">RS</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-btn">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I am a Civil Engineering student at San Francisco State University with hands-on experience in construction management, site execution, and technical design. With a background in both civil and mechanical engineering, I bring a unique perspective to infrastructure projects that balances structural integrity with sustainable functionality.</p>
+                <p>My passion lies in creating efficient built environments that prioritize both user experience and environmental responsibility. Whether managing construction sites, analyzing structural data, or developing 3D models, I bring meticulous attention to detail and a commitment to excellence.</p>
+            </div>
+            
+            <div class="skills-container">
+                <h3>Technical Expertise</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <h4>Design Software</h4>
+                        <p>AutoCAD, Autodesk Revit, ETABS, Lumion, Adobe Photoshop, Adobe AfterEffect</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Engineering Competencies</h4>
+                        <p>Contract management, Site execution, Construction management, Estimating Costing, Surveying</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Technical Equipment</h4>
+                        <p>Dumpy Level, Theodolite, Total Station, Alidade, Mini Drafter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-icons">
+            <i class="fas fa-hard-hat helmet-icon"></i>
+            <i class="fas fa-drafting-compass"></i>
+            <i class="fas fa-ruler-combined"></i>
+            <i class="fas fa-tools"></i>
+            <i class="fas fa-building"></i>
+            <i class="fas fa-bridge"></i>
+            <i class="fas fa-road"></i>
+            <i class="fas fa-compass"></i>
+            <i class="fas fa-cogs"></i>
+            <i class="fas fa-wrench"></i>
+            <i class="fas fa-truck"></i>
+            <i class="fas fa-hammer"></i>
+        </div>
+    </div>
+</section>
+        
+        <section id="experience">
+    <div class="container">
+        <div class="section-title">
+            <h2>Professional Journey</h2>
+        </div>
+        
+        <div class="highway-journey">
+            <!-- Highway -->
+            <div class="highway">
+                <div class="highway-line"></div>
+                <div class="vehicle"></div>
+            </div>
+            
+            <!-- Journey Points -->
+            <div class="journey-points">
+                <div class="journey-point">
+                    <div class="journey-milestone">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="journey-content">
+                        <h3>IT Technician</h3>
+                        <h4>San Francisco State University | November 2023 - Present</h4>
+                        <p>Manage procurement, deployment, and inventory of devices across the university. Provide hardware and software maintenance support while ensuring security compliance and coordinating with technology vendors.</p>
+                    </div>
+                </div>
+                
+                <div class="journey-point">
+                    <div class="journey-milestone">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="journey-content">
+                        <h3>Audio Visual Technician</h3>
+                        <h4>San Francisco State University | April 2022 - November 2023</h4>
+                        <p>Orchestrated setup and troubleshooting for 70+ university events with 100% on-time setup record. Implemented safety protocols reducing equipment faults by 25% and coordinated audio, visual, and lighting systems for high-profile events.</p>
+                    </div>
+                </div>
+                
+                <div class="journey-point">
+                    <div class="journey-milestone">
+                        <i class="fas fa-bridge"></i>
+                    </div>
+                    <div class="journey-content">
+                        <h3>Sub Engineer Internship</h3>
+                        <h4>Hi Tech Civil Design Consultancy | June 2020 - July 2021</h4>
+                        <p>Led analysis of survey, geological, and topographical data for infrastructure projects. Conducted traffic studies and accident analysis to develop safety solutions, elevating project safety standards by 10% through structural vulnerability identification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        <section id="projects">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Featured Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kalash Cattle Farm" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-date">Feb 2021 – July 2021</div>
+                            <h3>Kalash Cattle Farm</h3>
+                            <ul>
+                                <li>Created Storm-water and Erosion Control designs using AutoCAD</li>
+                                <li>Estimated materials for foundation work</li>
+                                <li>Provided on-site technical inspection of construction quality</li>
+                            </ul>
+                            <button class="tab-button" onclick="openModal('kalash-photos-modal')">View Photos</button>
+                        </div>
+                    </div>
+
+                    <!-- Modal for Photos -->
+                    <div id="kalash-photos-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button" onclick="closeModal('kalash-photos-modal')">&times;</span>
+                            <div class="photo-gallery">
+                                <img src="https://via.placeholder.com/300x200" alt="Photo 1">
+                                <img src="https://via.placeholder.com/300x200" alt="Photo 2">
+                                <img src="https://via.placeholder.com/300x200" alt="Photo 3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="3D Modeling Project" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-date">May 2021 – June 2021</div>
+                            <h3>3D Modeling Project</h3>
+                            <ul>
+                                <li>Developed detailed 3D models of residential structures using Revit</li>
+                                <li>Created realistic renderings with Lumion for client presentations</li>
+                                <li>Optimized structural designs for material efficiency</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bridge Design" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-date">Sep 2020 – Dec 2020</div>
+                            <h3>Bridge Design Analysis</h3>
+                            <ul>
+                                <li>Conducted structural analysis of pedestrian bridge using ETABS</li>
+                                <li>Performed load calculations and stress testing</li>
+                                <li>Recommended design improvements increasing safety factor by 15%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education">
+    <div class="container">
+        <div class="section-title">
+            <h2>Education</h2>
+        </div>
+        <div class="education-grid">
+            <div class="education-item">
+                <h3>San Francisco State University</h3>
+                <p class="degree">Bachelor of Science in Civil Engineering</p>
+                <span class="period">2021 - Present</span>
+
+                <div class="coursework">
+                    <h4>Key Coursework:</h4>
+                    <p>Structural Analysis, Fluid Mechanics, Geotechnical Engineering, Transportation Engineering</p>
+                </div>
+            </div>
+            <div class="education-item">
+                <h3>Tri Juddha Mahabir Pradsad Raghubir Ram Technical Secondary School (Nepal Education Board) <p class="degree">Diploma High School in Civil Engineering</p>
+                <span class="period">2018 - 2021</span>
+                
+                <div class="coursework">
+                    <h4>Key Coursework:</h4>
+                    <p>Engineering Mechanics, Surveying, Construction Technology, Engineering Drawing</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="leadership">
+    <div class="container">
+        <div class="section-title">
+            <h2>Leadership</h2>
+        </div>
+        <div class="leadership-grid">
+            <div class="leadership-item">
+                <h3>OJT 2018</h3>
+                <p class="duration">41 Working Days</p>
+                <p>Led a team of 15 members during a 41-day On-the-Job Training (OJT) program. Successfully managed tasks, ensured team collaboration, and delivered results on time while maintaining high-quality standards.</p>
+            </div>
+            <div class="leadership-item">
+                <h3>OJT 2021</h3>
+                <p class="duration">64 Working Days</p>
+                <p>Led a team of 14 members during a 64-day On-the-Job Training (OJT) program. Focused on efficient task delegation, team motivation, and achieving project milestones within the stipulated timeframe.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-container">
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>San Francisco, California</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <a href="mailto:rohitshah15@outlook.com">rohitshah15@outlook.com</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <a href="tel:628-235-9113">(628) 235-9113</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/rohit-shah-82925421b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/rohitshah98/rohitweb" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/rohitshah3665" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/rohitshah3665/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">© 2023 Rohit Shah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Scroll down button
+        document.getElementById('scrollDown').addEventListener('click', () => {
+            window.scrollBy({
+                top: window.innerHeight - 100,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Modal functionality
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = "flex"; // Show the modal
+            document.body.style.overflow = "hidden"; // Disable scrolling
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = "none"; // Hide the modal
+            document.body.style.overflow = "auto"; // Enable scrolling
+        }
+
+        // Helmet icon scroll effect
+        const scrollHelmet = document.getElementById('scroll-helmet');
+        const profileImage = document.querySelector('.profile-image-container');
+
+        window.addEventListener('scroll', () => {
+            const profileImageOffset = profileImage.offsetTop; // Get the position of the profile image relative to the page
+            const scrollPosition = window.scrollY + window.innerHeight; // Current scroll position + viewport height
+
+            if (scrollPosition > profileImageOffset) {
+                scrollHelmet.classList.add('visible'); // Show the helmet icon
+                scrollHelmet.style.top = `${window.scrollY + 270}px`; // Update the top position dynamically
+            } else {
+                scrollHelmet.classList.remove('visible'); // Hide the helmet icon
+                scrollHelmet.style.top = `${window.scrollY - 100}px`; // Reset the top position
+            }
+        });
+    </script>
+</body>
+</html>
+
