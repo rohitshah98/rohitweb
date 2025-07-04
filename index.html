@@ -72,6 +72,7 @@
         }
         
         body {
+            cursor: none; /* Hide the default cursor */
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
@@ -100,6 +101,25 @@
         .scale-in.active {
             opacity: 1;
             transform: scale(1);
+        }
+
+        /* Crosshair styles */
+        .crosshair-horizontal,
+        .crosshair-vertical {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark lines */
+            pointer-events: none; /* Prevent interaction */
+            z-index: 1000; /* Ensure it appears above everything */
+        }
+
+        .crosshair-horizontal {
+            height: 2px; /* Thickness of the horizontal line */
+            width: 100vw; /* Full width of the viewport */
+        }
+
+        .crosshair-vertical {
+            width: 2px; /* Thickness of the vertical line */
+            height: 100vh; /* Full height of the viewport */
         }
 
         /* Header Section */
@@ -554,7 +574,7 @@
 
         .timeline-content ul {
             margin-left: 1.5rem;
-            color: var(--text-light);
+            color: var (--text-light);
         }
 
         .timeline-content ul li {
@@ -746,7 +766,7 @@
         .leadership-item:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
-            border-color: var(--primary-color);
+            border-color: var (--primary-color);
         }
 
         .leadership-item h3 {
@@ -1396,9 +1416,46 @@
             display: block;
             opacity: 1;
         }
+
+        .watermark-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Prevent interaction with watermarks */
+            z-index: -1; /* Place behind all content */
+        }
+
+        .watermark {
+            position: absolute;
+            opacity: 0.1; /* Low opacity for watermark effect */
+            width: 150px; /* Adjust size */
+            height: auto;
+        }
+
+        /* Scatter the watermarks */
+        .watermark:nth-child(1) {
+            top: 10%;
+            left: 5%;
+        }
+
+        .watermark:nth-child(2) {
+            top: 50%;
+            left: 10%;
+        }
+
+        .watermark:nth-child(3) {
+            top: 80%;
+            right: 5%;
+        }
     </style>
 </head>
 <body>
+    <!-- Crosshair elements -->
+    <div class="crosshair-horizontal"></div>
+    <div class="crosshair-vertical"></div>
+
     <header>
         <div class="header-content">
             <div class="profile-section fade-in-up">
@@ -1900,8 +1957,26 @@
                 }
             });
         });
+
+        // Crosshair functionality
+        const horizontalLine = document.querySelector('.crosshair-horizontal');
+        const verticalLine = document.querySelector('.crosshair-vertical');
+
+        window.addEventListener('mousemove', (event) => {
+            const { clientX, clientY } = event;
+
+            // Position the horizontal line at the cursor's Y position
+            horizontalLine.style.top = `${clientY}px`;
+
+            // Position the vertical line at the cursor's X position
+            verticalLine.style.left = `${clientX}px`;
+        });
     </script>
 
-
+    <div class="watermark-container">
+        <img src="./assets/watermarks/watermark1.png" alt="Watermark 1" class="watermark">
+        <img src="./assets/watermarks/watermark2.png" alt="Watermark 2" class="watermark">
+        <img src="./assets/watermarks/watermark3.png" alt="Watermark 3" class="watermark">
+    </div>
 </html></body></body>
 </html>
