@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Shah - Civil Engineering Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base Variables */
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --primary-dark: #1d4ed8; /* Darker Blue */
+            --secondary-color: #10b981; /* Green */
+            --text-dark: #1f2937; /* Dark Grey */
+            --text-light: #6b7280; /* Medium Grey */
+            --bg-light: #f9fafb; /* Light Grey */
+            --bg-white: #ffffff; /* White */
+            --bg-dark: #111827; /* Darkest Grey */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+            --header-bg-gradient: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(30, 58, 138, 0.8) 100%);
+            --header-bg-image-opacity: 0.5;
+            --profile-image-border: rgba(255, 255, 255, 0.1);
+            --contact-info-bg: rgba(255, 255, 255, 0.1);
+            --contact-info-hover-bg: rgba(255, 255, 255, 0.2);
+            --section-bg-odd: var(--bg-white);
+            --section-bg-even: var(--bg-light);
+            --timeline-line-color: var(--primary-color);
+            --milestone-color: var(--primary-color);
+            --milestone-shadow: rgba(37, 99, 235, 0.1);
+            --timeline-item-bg: var(--bg-white);
+            --education-item-border: var(--primary-color);
+            --education-period-bg: rgba(37, 99, 235, 0.1);
+            --contact-icon-bg: rgba(37, 99, 235, 0.1);
+            --form-border: #e5e7eb;
+            --form-focus-shadow: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Dark Mode Variables */
+        body.dark-mode {
+            --text-dark: #e0e7ff; /* Light Blue for Dark Text */
+            --text-light: #9ca3af; /* Lighter Grey for Light Text */
+            --bg-light: #1f2937; /* Dark Grey Background */
+            --bg-white: #374151; /* Slightly Lighter Dark Grey */
+            --bg-dark: #0f172a; /* Very Dark Blue */
+            --header-bg-gradient: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(29, 78, 216, 0.9) 100%);
+            --header-bg-image-opacity: 0.2;
+            --profile-image-border: rgba(255, 255, 255, 0.05);
+            --contact-info-bg: rgba(255, 255, 255, 0.05);
+            --contact-info-hover-bg: rgba(255, 255, 255, 0.1);
+            --section-bg-odd: var(--bg-white);
+            --section-bg-even: var(--bg-light);
+            --timeline-line-color: var(--secondary-color); /* Green for contrast */
+            --milestone-color: var(--secondary-color);
+            --milestone-shadow: rgba(16, 185, 129, 0.1);
+            --timeline-item-bg: var(--bg-white);
+            --education-item-border: var(--secondary-color);
+            --education-period-bg: rgba(16, 185, 129, 0.1);
+            --contact-icon-bg: rgba(16, 185, 129, 0.1);
+            --form-border: #4b5563;
+            --form-focus-shadow: rgba(16, 185, 129, 0.1);
+            color: var(--text-dark); /* Ensure body text adapts */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* Utility Classes for Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scale-in.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Header Section */
+        header {
+            min-height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--header-bg-gradient);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: url('./bg.jpg') center/cover no-repeat; /* Fixed to use local bg.jpg */
+            opacity: var(--header-bg-image-opacity);
+            transition: opacity 0.5s ease;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid var(--profile-image-border);
+            transition: var(--transition);
+        }
+        
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .profile-info h1 {
+            font-size: 3.5rem;
+            font-weight: 800; /* Bolder font */
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        
+        .profile-info h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--contact-info-bg);
+            border-radius: 8px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .contact-info a:hover {
+            background: var(--contact-info-hover-bg);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: white;
+            font-size: 2.5rem; /* Larger icon */
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .scroll-down:hover {
+            color: var(--primary-color);
+            transform: translateY(-8px) translateX(-50%);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Navigation Bar */
+        nav {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: var(--transition);
+        }
+        
+        nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        nav ul li {
+            padding: 0 0.5rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 1rem 0.75rem;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0.75rem;
+            left: 0.75rem;
+            right: 0.75rem;
+            height: 2px;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a:hover::after, nav ul li a.active::after {
+            transform: scaleX(1);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .dark-mode-btn {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .dark-mode-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* General Section Styling */
+        section {
+            padding: 6rem 0;
+            transition: background-color 0.5s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+        
+        /* About Section */
+        #about {
+            background-color: var(--section-bg-odd);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .skills-container {
+            margin-top: 4rem;
+        }
+        
+        .skills-container h3 {
+            font-size: 1.75rem;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-item {
+            background-color: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .skill-item h4 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .skill-item h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+        
+        .skill-item p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Experience Section */
+        #experience {
+            background-color: var(--section-bg-even);
+            padding: 6rem 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--timeline-line-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: background-color 0.5s ease;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            position: relative;
+            width: 50%;
+            padding: 1rem 2rem;
+            box-sizing: border-box;
+        }
+
+        .timeline-item.left {
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            justify-content: flex-start;
+            text-align: left;
+            left: 50%;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--milestone-color);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+            transform: translateX(-50%);
+            transition: background-color 0.5s ease;
+        }
+
+        .timeline-item.left::before {
+            right: -10px;
+        }
+
+        .timeline-item.right::before {
+            left: -10px;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--milestone-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 2;
+            transition: background-color 0.5s ease;
+        }
+
+        .timeline-content {
+            background-color: var(--timeline-item-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            margin-left: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        /* Projects Section */
+        #projects {
+            background-color: var(--section-bg-odd);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .project-card {
+            background-color: var(--bg-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .project-image-container {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-info {
+            padding: 2rem;
+        }
+        
+        .project-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-info h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .project-info ul {
+            margin-left: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .project-info ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Education Section */
+        #education {
+            background-color: var(--section-bg-even);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .education-item {
+            background-color: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--education-item-border);
+            transition: var(--transition);
+        }
+        
+        .education-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .education-item:hover::before {
+            width: 8px;
+        }
+        
+        .education-item h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .education-item p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-item .degree {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .education-item .period {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--education-period-bg);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+        
+        .coursework {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .coursework h4 {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Leadership Section */
+        #leadership {
+            background-color: var(--section-bg-light);
+            padding: 6rem 2rem;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .leadership-item {
+            background-color: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .leadership-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .leadership-item h3 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .leadership-item .duration {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .leadership-item p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--section-bg-odd);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--contact-icon-bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: background-color 0.5s ease;
+        }
+        
+        .contact-details h3 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-details p, .contact-details a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary-color);
+        }
+        
+        .contact-form {
+            background-color: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--form-border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--bg-light); /* Match background */
+            color: var(--text-dark);
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--form-focus-shadow);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            transition: background-color 0.5s ease;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-section {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-white);
+                flex-direction: column;
+                box-shadow: var(--shadow-md);
+                z-index: 100;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 1rem;
+            }
+            
+            nav ul li a::after {
+                display: none;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::before {
+                left: 22px;
+            }
+            
+            .timeline-item.left::before {
+                right: auto;
+                left: 22px;
+            }
+
+            .timeline-item.right {
+                left: 0%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .profile-info h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .skills-list, .projects-grid, .education-grid, .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                padding-left: 50px;
+            }
+
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item::before {
+                left: 10px;
+            }
+
+            .timeline-item.left::before {
+                left: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .profile-image-container {
+                width: 200px;
+                height: 200px;
+            }
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+            .profile-info h2 {
+                font-size: 1.2rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-info a {
+                width: 100%;
+                justify-content: center;
+            }
+            .scroll-down {
+                font-size: 2rem;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+            backdrop-filter: blur(8px); /* Subtle blur */
+            justify-content: center;
+            align-items: center;
+            padding: 1rem; /* Add padding for small screens */
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            margin: auto; /* Center vertically and horizontally */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            transform: scale(0.95); /* Initial scale for animation */
+            opacity: 0; /* Initial opacity for animation */
+            animation: modal-appear 0.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+            color: var(--text-dark); /* Ensure text is readable */
+        }
+
+        @keyframes modal-appear {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-button {
+            color: var(--text-light); /* Use text-light for close button */
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+            gap: 10px;
+            padding-top: 1rem;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: auto; /* Adjust height based on image resolution */
+            object-fit: contain; /* Maintain aspect ratio */
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .tab-button {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tab-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Floating Icons */
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Cover the entire header */
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0; /* Behind content */
+        }
+
+        .floating-icons i {
+            position: absolute;
+            font-size: 2rem; /* Larger size */
+            opacity: 0.9; /* Increased opacity to 90% */
+            animation: float-random 12s infinite ease-in-out; /* Adjusted duration for smoother motion */
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Specific colors for icons */
+        .floating-icons .fa-hard-hat { color: rgba(255, 107, 107, 0.6); }
+        .floating-icons .fa-drafting-compass { color: rgba(107, 91, 149, 0.6); }
+        .floating-icons .fa-ruler-combined { color: rgba(136, 176, 75, 0.6); }
+        .floating-icons .fa-tools { color: rgba(247, 202, 201, 0.6); }
+        .floating-icons .fa-building { color: rgba(146, 168, 209, 0.6); }
+        .floating-icons .fa-bridge { color: rgba(255, 204, 92, 0.6); }
+        .floating-icons .fa-road { color: rgba(213, 166, 189, 0.6); }
+        .floating-icons .fa-compass { color: rgba(3, 79, 132, 0.6); }
+        .floating-icons .fa-cogs { color: rgba(247, 120, 107, 0.6); }
+        .floating-icons .fa-wrench { color: rgba(201, 76, 76, 0.6); }
+        .floating-icons .fa-truck { color: rgba(255, 111, 97, 0.6); }
+        .floating-icons .fa-hammer { color: rgba(107, 66, 38, 0.6); }
+
+        /* Random positions and delays for icons */
+        .floating-icons .fa-hard-hat { top: 10%; left: 15%; animation-delay: 0s; font-size: 2.2rem;}
+        .floating-icons .fa-drafting-compass { top: 30%; left: 45%; animation-delay: 2s; font-size: 1.8rem;}
+        .floating-icons .fa-ruler-combined { top: 50%; left: 75%; animation-delay: 4s; font-size: 2.5rem;}
+        .floating-icons .fa-tools { top: 70%; left: 25%; animation-delay: 6s; font-size: 2rem;}
+        .floating-icons .fa-building { top: 20%; left: 85%; animation-delay: 8s; font-size: 2.3rem;}
+        .floating-icons .fa-bridge { top: 60%; left: 5%; animation-delay: 10s; font-size: 1.9rem;}
+        .floating-icons .fa-road { top: 40%; left: 95%; animation-delay: 12s; font-size: 2.1rem;}
+        .floating-icons .fa-compass { top: 80%; left: 55%; animation-delay: 14s; font-size: 2.4rem;}
+        .floating-icons .fa-cogs { top: 15%; left: 65%; animation-delay: 16s; font-size: 1.7rem;}
+        .floating-icons .fa-wrench { top: 75%; left: 35%; animation-delay: 18s; font-size: 2.6rem;}
+        .floating-icons .fa-truck { top: 25%; left: 30%; animation-delay: 20s; font-size: 2.2rem;}
+        .floating-icons .fa-hammer { top: 65%; left: 70%; animation-delay: 22s; font-size: 2.0rem;}
+
+        @keyframes float-random {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(80px, -50px) rotate(15deg); } /* Increased movement */
+            50% { transform: translate(-80px, 80px) rotate(-15deg); } /* Increased movement */
+            75% { transform: translate(50px, -80px) rotate(10deg); } /* Increased movement */
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+
+
+        /* Highway Journey Styles */
+        .highway-journey {
+            position: relative;
+            padding: 4rem 0;
+            margin-top: 2rem;
+            overflow: hidden; /* To contain vehicle animation */
+        }
+
+        .highway {
+            position: relative;
+            height: 80px; /* Slightly smaller highway */
+            background-color: #333;
+            border-radius: 40px; /* Adjust border-radius */
+            max-width: 90%; /* Make it fluid */
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .highway-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 8px; /* Thinner line */
+            background: repeating-linear-gradient(90deg, #f5f5f5 0px, #f5f5f5 40px, transparent 40px, transparent 80px); /* Shorter dashes */
+            transform: translateY(-50%);
+            z-index: 1;
+            animation: moveLine 10s linear infinite; /* Faster line movement */
+        }
+
+        .vehicle {
+            position: absolute;
+            top: 50%;
+            left: -80px; /* Start further off-screen */
+            width: 70px; /* Slightly larger car */
+            height: 45px; /* Slightly larger car */
+            background-color: var(--primary-color); /* Car color */
+            border-radius: 10px;
+            z-index: 2;
+            transform: translateY(-50%);
+            animation: driveVehicle 10s linear infinite; /* Faster car movement */
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        }
+
+        .vehicle::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 15px; /* Adjust position */
+            width: 40px; /* Adjust size */
+            height: 20px; /* Adjust size */
+            background-color: var(--primary-color);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .vehicle::after {
+            content: '';
+            position: absolute;
+            bottom: -8px; /* Adjust position */
+            left: 15px; /* Adjust position */
+            width: 12px; /* Adjust size */
+            height: 12px; /* Adjust size */
+            background-color: #222;
+            border-radius: 50%;
+            box-shadow: 30px 0 0 #222; /* Second wheel */
+        }
+
+        .journey-points {
+            position: relative;
+            margin-top: 6rem;
+            padding-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center points */
+        }
+
+        .journey-point {
+            position: relative;
+            display: flex;
+            align-items: center; /* Align content with milestone */
+            margin-bottom: 4rem; /* Reduced margin */
+            width: 100%;
+            max-width: 800px; /* Max width for content */
+            z-index: 2;
+        }
+
+        .journey-point:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .journey-point:last-child {
+            margin-bottom: 0;
+        }
+
+        .journey-milestone {
+            position: relative;
+            width: 80px; /* Smaller milestone */
+            height: 80px;
+            background-color: var(--milestone-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem; /* Smaller icon */
+            z-index: 3;
+            box-shadow: 0 0 0 8px var(--milestone-shadow), 0 5px 15px rgba(0, 0, 0, 0.2); /* Smaller shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .journey-milestone:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 12px var(--milestone-shadow), 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .journey-content {
+            flex: 1;
+            padding: 1.5rem; /* Reduced padding */
+            background-color: var(--bg-white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            margin: 0 1.5rem; /* Reduced margin */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .journey-content:hover {
+            transform: translateY(-8px); /* Slightly less movement */
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .journey-content h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem; /* Slightly smaller font */
+            margin-bottom: 0.5rem;
+        }
+
+        .journey-content h4 {
+            color: var(--primary-color);
+            font-size: 0.9rem; /* Slightly smaller font */
+            margin-bottom: 0.8rem;
+        }
+
+        .journey-content p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+
+        /* Animation for car movement */
+        @keyframes driveVehicle {
+            0% {
+                left: -80px;
+            }
+            100% {
+                left: calc(100% + 80px); /* Ensure it goes completely off-screen */
+            }
+        }
+
+        /* Message Box for Form Submission */
+        .message-box {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            z-index: 1001;
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .message-box.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="profile-section fade-in-up">
+                <div class="profile-image-container">
+                    <img src="./profile.jpg" alt="Rohit Shah" class="profile-image"> <!-- Updated to use local profile.jpg -->
+                </div>
+                <div class="profile-info">
+                    <h1>Rohit Shah</h1>
+                    <h2>Civil Engineer & Infrastructure Designer</h2>
+                    <p>Building sustainable infrastructure through innovative design and precise execution</p>
+                    <div class="contact-info">
+                        <a href="tel:628-235-9113"><i class="fas fa-phone"></i> 628-235-9113</a>
+                        <a href="mailto:rohitshah15@outlook.com"><i class="fas fa-envelope"></i> rohitshah15@outlook.com</a>
+                        <a href="https://www.linkedin.com/in/rohit-shah-82925421b/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="scroll-helmet" class="scroll-helmet">
+            <i class="fas fa-hard-hat"></i>
+        </div>
+        <div class="scroll-down" id="scrollDown">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+    
+    <nav id="mainNav">
+        <div class="nav-container">
+            <a href="#" class="logo">RS</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#leadership" class="nav-link">Leadership</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-btn">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="about" class="fade-in-up">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I am a Civil Engineering student at San Francisco State University with hands-on experience in construction management, site execution, and technical design. With a background in both civil and mechanical engineering, I bring a unique perspective to infrastructure projects that balances structural integrity with sustainable functionality.</p>
+                        <p>My passion lies in creating efficient built environments that prioritize both user experience and environmental responsibility. Whether managing construction sites, analyzing structural data, or developing 3D models, I bring meticulous attention to detail and a commitment to excellence.</p>
+                    </div>
+                    
+                    <div class="skills-container">
+                        <h3>Technical Expertise</h3>
+                        <div class="skills-list">
+                            <div class="skill-item scale-in">
+                                <h4>Design Software</h4>
+                                <p>AutoCAD, Autodesk Revit, ETABS, Lumion, Adobe Photoshop, Adobe AfterEffect</p>
+                            </div>
+                            <div class="skill-item scale-in">
+                                <h4>Engineering Competencies</h4>
+                                <p>Contract management, Site execution, Construction management, Estimating Costing, Surveying</p>
+                            </div>
+                            <div class="skill-item scale-in">
+                                <h4>Technical Equipment</h4>
+                                <p>Dumpy Level, Theodolite, Total Station, Alidade, Mini Drafter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Move floating icons here -->
+                <div class="floating-icons">
+                    <i class="fas fa-hard-hat"></i>
+                    <i class="fas fa-drafting-compass"></i>
+                    <i class="fas fa-ruler-combined"></i>
+                    <i class="fas fa-tools"></i>
+                    <i class="fas fa-building"></i>
+                    <i class="fas fa-bridge"></i>
+                    <i class="fas fa-road"></i>
+                    <i class="fas fa-compass"></i>
+                    <i class="fas fa-cogs"></i>
+                    <i class="fas fa-wrench"></i>
+                    <i class="fas fa-truck"></i>
+                    <i class="fas fa-hammer"></i>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience" class="fade-in-up">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Professional Journey</h2>
+                </div>
+                
+                <div class="highway-journey">
+                    <div class="highway">
+                        <div class="highway-line"></div>
+                        <div class="vehicle"></div>
+                    </div>
+                    
+                    <div class="journey-points">
+                        <div class="journey-point fade-in-up">
+                            <div class="journey-milestone">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <div class="journey-content">
+                                <h3>IT Technician</h3>
+                                <h4>San Francisco State University | November 2023 - Present</h4>
+                                <p>Manage procurement, deployment, and inventory of devices across the university. Provide hardware and software maintenance support while ensuring security compliance and coordinating with technology vendors.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="journey-point fade-in-up">
+                            <div class="journey-milestone">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="journey-content">
+                                <h3>Audio Visual Technician</h3>
+                                <h4>San Francisco State University | April 2022 - November 2023</h4>
+                                <p>Orchestrated setup and troubleshooting for 70+ university events with 100% on-time setup record. Implemented safety protocols reducing equipment faults by 25% and coordinated audio, visual, and lighting systems for high-profile events.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="journey-point fade-in-up">
+                            <div class="journey-milestone">
+                                <i class="fas fa-bridge"></i>
+                            </div>
+                            <div class="journey-content">
+                                <h3>Sub Engineer Internship</h3>
+                                <h4>Hi Tech Civil Design Consultancy | June 2020 - July 2021</h4>
+                                <p>Led analysis of survey, geological, and topographical data for infrastructure projects. Conducted traffic studies and accident analysis to develop safety solutions, elevating project safety standards by 10% through structural vulnerability identification.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="fade-in-up">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Featured Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card scale-in">
+                        <div class="project-image-container">
+                            <img src="./kcf.jpg" alt="Kalash Cattle Farm" class="project-image"> <!-- Updated to use local kcf.jpg -->
+                        </div>
+                        <div class="project-info">
+                            <div class="project-date">Feb 2021 – July 2021</div>
+                            <h3>Kalash Cattle Farm</h3>
+                            <ul>
+                                <li>Created Storm-water and Erosion Control designs using AutoCAD</li>
+                                <li>Estimated materials for foundation work</li>
+                                <li>Provided on-site technical inspection of construction quality</li>
+                            </ul>
+                            <button class="tab-button" onclick="openModal('kalash-photos-modal')">View Photos</button>
+                        </div>
+                    </div>
+
+                    <div id="kalash-photos-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button" onclick="closeModal('kalash-photos-modal')">&times;</span>
+                            <h3>Kalash Cattle Farm Photos</h3>
+                            <div class="photo-gallery">
+                                <img src="./k1.jpg" alt="Farm Photo 1"> <!-- Updated to use local k1.jpg -->
+                                <img src="./k2.jpg" alt="Farm Photo 2"> <!-- Updated to use local k2.jpg -->
+                                <img src="./k3.jpg" alt="Farm Photo 3"> <!-- Updated to use local k3.jpg -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card scale-in">
+                        <div class="project-image-container">
+                            <img src="./3d.jpg" alt="3D Drawing Project" class="project-image"> <!-- Updated to use local 3d.jpg -->
+                        </div>
+                        <div class="project-info">
+                            <div class="project-date">May 2021 – June 2021</div>
+                            <h3>3D Drawing Project</h3>
+                            <ul>
+                                <li>Developed detailed 3D models of residential structures using Revit</li>
+                                <li>Created realistic renderings with Lumion for client presentations</li>
+                                <li>Optimized structural designs for material efficiency</li>
+                            </ul>
+                            <button class="tab-button" onclick="openModal('3d-drawing-modal')">View Photos</button>
+                        </div>
+                    </div>
+
+                    <div id="3d-drawing-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button" onclick="closeModal('3d-drawing-modal')">&times;</span>
+                            <h3>3D Drawing Project Photos</h3>
+                            <div class="photo-gallery">
+                                <img src="./3d1.jpg" alt="3D Drawing Photo 1"> <!-- Updated to use local 3d1.jpg -->
+                                <img src="./3d2.jpg" alt="3D Drawing Photo 2"> <!-- Updated to use local 3d2.jpg -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card scale-in">
+                        <div class="project-image-container">
+                            <img src="./2.jpg" alt="Engineering Transportation Term Project" class="project-image"> <!-- Updated to use local 2.jpg -->
+                        </div>
+                        <div class="project-info">
+                            <div class="project-date">Fall 2024</div>
+                            <h3>Engineering Transportation Term Project (ENGR 438)</h3>
+                            <ul>
+                                <li>Analyzed SFSU commuter behavior and accessibility challenges.</li>
+                                <li>Created heatmaps using ArcGIS Pro to visualize accessibility challenges and commuter patterns.</li>
+                                <li>Provided actionable recommendations for sustainable transportation solutions and campus climate goals.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education" class="fade-in-up">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Education</h2>
+                </div>
+                <div class="education-grid">
+                    <div class="education-item scale-in">
+                        <h3>San Francisco State University</h3>
+                        <p class="degree">Bachelor of Science in Civil Engineering</p>
+                        <span class="period">2021 - Present</span>
+
+                        <div class="coursework">
+                            <h4>Key Coursework:</h4>
+                            <p>Structural Analysis, Fluid Mechanics, Geotechnical Engineering, Transportation Engineering</p>
+                        </div>
+                    </div>
+                    <div class="education-item scale-in">
+                        <h3>Tri Juddha Mahabir Pradsad Raghubir Ram Technical Secondary School (Nepal Education Board)</h3>
+                        <p class="degree">Diploma High School in Civil Engineering</p>
+                        <span class="period">2018 - 2021</span>
+                        
+                        <div class="coursework">
+                            <h4>Key Coursework:</h4>
+                            <p>Engineering Mechanics, Surveying, Construction Technology, Engineering Drawing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="leadership" class="fade-in-up">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Leadership</h2>
+                </div>
+                <div class="leadership-grid">
+                    <div class="leadership-item scale-in">
+                        <h3>OJT 2018</h3>
+                        <p class="duration">41 Working Days</p>
+                        <p>Led a team of 15 members during a 41-day On-the-Job Training (OJT) program. Successfully managed tasks, ensured team collaboration, and delivered results on time while maintaining high-quality standards.</p>
+                    </div>
+                    <div class="leadership-item scale-in">
+                        <h3>OJT 2021</h3>
+                        <p class="duration">64 Working Days</p>
+                        <p>Led a team of 14 members during a 64-day On-the-Job Training (OJT) program. Focused on efficient task delegation, team motivation, and achieving project milestones within the stipulated timeframe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="fade-in-up">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info-container">
+                        <div class="contact-info-item scale-in">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p>San Francisco, California</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item scale-in">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <a href="mailto:rohitshah15@outlook.com">rohitshah15@outlook.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item scale-in">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <a href="tel:628-235-9113">(628) 235-9113</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form scale-in">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" required></textarea>
+                            </div>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content fade-in-up">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/rohit-shah-82925421b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/rohitshah98/rohitweb" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/rohitshah3665" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/rohitshah3665/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">© 2023 Rohit Shah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="messageBox" class="message-box">
+        Message sent successfully!
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Scroll down button
+        document.getElementById('scrollDown').addEventListener('click', () => {
+            window.scrollBy({
+                top: window.innerHeight - 100, // Scroll down by roughly one screen height
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Modal functionality
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = "flex"; // Show the modal
+            document.body.style.overflow = "hidden"; // Disable scrolling
+
+            // Add event listener to close modal when clicking outside the content
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal(id);
+                }
+            });
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = "none"; // Hide the modal
+            document.body.style.overflow = "auto"; // Enable scrolling
+        }
+
+        // Helmet icon scroll effect
+        const scrollHelmet = document.getElementById('scroll-helmet');
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const headerBottom = header.offsetTop + header.offsetHeight;
+            const scrollPosition = window.scrollY;
+
+            // Show helmet when scrolled past the header
+            if (scrollPosition > headerBottom - 100) { // Adjust 100px for earlier appearance
+                scrollHelmet.classList.add('visible');
+            } else {
+                scrollHelmet.classList.remove('visible');
+            }
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const animateOnScrollElements = document.querySelectorAll('.fade-in-up, .scale-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px 0px -50px 0px' // Adjust when elements appear
+        });
+
+        animateOnScrollElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Contact Form Submission (Simple Message Box)
+        const contactForm = document.getElementById('contactForm');
+        const messageBox = document.getElementById('messageBox');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+
+            // Display message box
+            messageBox.classList.add('show');
+
+            // Hide message box after 3 seconds
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 3000);
+
+            // Optionally clear the form
+            contactForm.reset();
+        });
+
+        // Active navigation link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - sectionHeight / 3) { // Adjust sensitivity
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.href.includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+
+</html></body></body>
+</html>
