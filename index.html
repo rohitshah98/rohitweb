@@ -5,64 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohit Shah - Civil Engineering Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         /* Base Variables */
         :root {
-            --primary-color: #2563eb; /* Blue */
-            --primary-dark: #1d4ed8; /* Darker Blue */
-            --secondary-color: #10b981; /* Green */
-            --text-dark: #1f2937; /* Dark Grey */
-            --text-light: #6b7280; /* Medium Grey */
-            --bg-light: #f9fafb; /* Light Grey */
-            --bg-white: #ffffff; /* White */
-            --bg-dark: #111827; /* Darkest Grey */
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #10b981;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --bg-dark: #111827;
             --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             --transition: all 0.3s ease;
-            --header-bg-gradient: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(30, 58, 138, 0.8) 100%);
-            --header-bg-image-opacity: 0.5;
-            --profile-image-border: rgba(255, 255, 255, 0.1);
+            --header-bg-gradient: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%);
+            --header-bg-image-opacity: 0.4;
+            --profile-image-border: rgba(255, 255, 255, 0.15);
             --contact-info-bg: rgba(255, 255, 255, 0.1);
             --contact-info-hover-bg: rgba(255, 255, 255, 0.2);
             --section-bg-odd: var(--bg-white);
             --section-bg-even: var(--bg-light);
             --timeline-line-color: var(--primary-color);
             --milestone-color: var(--primary-color);
-            --milestone-shadow: rgba(37, 99, 235, 0.1);
+            --milestone-shadow: rgba(37, 99, 235, 0.15);
             --timeline-item-bg: var(--bg-white);
             --education-item-border: var(--primary-color);
             --education-period-bg: rgba(37, 99, 235, 0.1);
             --contact-icon-bg: rgba(37, 99, 235, 0.1);
             --form-border: #e5e7eb;
-            --form-focus-shadow: rgba(37, 99, 235, 0.1);
+            --form-focus-shadow: rgba(37, 99, 235, 0.15);
         }
 
         /* Dark Mode Variables */
         body.dark-mode {
-            --text-dark: #e0e7ff; /* Light Blue for Dark Text */
-            --text-light: #9ca3af; /* Lighter Grey for Light Text */
-            --bg-light: #1f2937; /* Dark Grey Background */
-            --bg-white: #374151; /* Slightly Lighter Dark Grey */
-            --bg-dark: #0f172a; /* Very Dark Blue */
-            --header-bg-gradient: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(29, 78, 216, 0.9) 100%);
-            --header-bg-image-opacity: 0.2;
-            --profile-image-border: rgba(255, 255, 255, 0.05);
-            --contact-info-bg: rgba(255, 255, 255, 0.05);
-            --contact-info-hover-bg: rgba(255, 255, 255, 0.1);
+            --text-dark: #e0e7ff;
+            --text-light: #9ca3af;
+            --bg-light: #1f2937;
+            --bg-white: #374151;
+            --bg-dark: #0f172a;
+            --header-bg-gradient: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(29, 78, 216, 0.95) 100%);
+            --header-bg-image-opacity: 0.25;
+            --profile-image-border: rgba(255, 255, 255, 0.1);
+            --contact-info-bg: rgba(255, 255, 255, 0.08);
+            --contact-info-hover-bg: rgba(255, 255, 255, 0.15);
             --section-bg-odd: var(--bg-white);
             --section-bg-even: var(--bg-light);
-            --timeline-line-color: var(--secondary-color); /* Green for contrast */
+            --timeline-line-color: var(--secondary-color);
             --milestone-color: var(--secondary-color);
-            --milestone-shadow: rgba(16, 185, 129, 0.1);
+            --milestone-shadow: rgba(16, 185, 129, 0.15);
             --timeline-item-bg: var(--bg-white);
             --education-item-border: var(--secondary-color);
-            --education-period-bg: rgba(16, 185, 129, 0.1);
-            --contact-icon-bg: rgba(16, 185, 129, 0.1);
+            --education-period-bg: rgba(16, 185, 129, 0.15);
+            --contact-icon-bg: rgba(16, 185, 129, 0.15);
             --form-border: #4b5563;
-            --form-focus-shadow: rgba(16, 185, 129, 0.1);
-            color: var(--text-dark); /* Ensure body text adapts */
+            --form-focus-shadow: rgba(16, 185, 129, 0.15);
+            color: var(--text-dark);
         }
         
         * {
@@ -72,19 +74,25 @@
         }
         
         body {
-            cursor: none; /* Hide the default cursor */
+            cursor: none;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--bg-light);
             transition: background-color 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Utility Classes for Animations */
         .fade-in-up {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
         .fade-in-up.active {
@@ -94,8 +102,8 @@
 
         .scale-in {
             opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: scale(0.95);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
         .scale-in.active {
@@ -103,23 +111,33 @@
             transform: scale(1);
         }
 
-        /* Crosshair styles */
+        /* Custom Crosshair Cursor */
         .crosshair-horizontal,
         .crosshair-vertical {
             position: fixed;
-            background-color: rgba(0, 0, 0, 0.8); /* Dark lines */
-            pointer-events: none; /* Prevent interaction */
-            z-index: 1000; /* Ensure it appears above everything */
+            pointer-events: none;
+            z-index: 9999;
+            transition: opacity 0.2s ease;
         }
 
         .crosshair-horizontal {
-            height: 2px; /* Thickness of the horizontal line */
-            width: 100vw; /* Full width of the viewport */
+            height: 2px; /* Increased thickness */
+            width: 100vw;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                var(--primary-color) 50%, 
+                transparent 100%);
+            opacity: 0.5;
         }
 
         .crosshair-vertical {
-            width: 2px; /* Thickness of the vertical line */
-            height: 100vh; /* Full height of the viewport */
+            width: 2px; /* Increased thickness */
+            height: 100vh;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                var(--primary-color) 50%, 
+                transparent 100%);
+            opacity: 0.5;
         }
 
         /* Header Section */
@@ -140,10 +158,30 @@
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: -1;
-            background: url('./bg.jpg') center/cover no-repeat; /* Fixed to use local bg.jpg */
+            z-index: 0;
+            background: url('./bg.jpg') center/cover no-repeat;
             opacity: var(--header-bg-image-opacity);
             transition: opacity 0.5s ease;
+        }
+
+        /* Animated Gradient Overlay */
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(37, 99, 235, 0.1) 0%, 
+                rgba(16, 185, 129, 0.1) 100%);
+            animation: gradientShift 15s ease infinite;
+            z-index: 0;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
         }
         
         .header-content {
@@ -151,7 +189,7 @@
             margin: 0 auto;
             padding: 2rem;
             position: relative;
-            z-index: 1;
+            z-index: 2;
             width: 100%;
         }
         
@@ -164,8 +202,10 @@
         
         .profile-image-container {
             position: relative;
-            width: 280px;
-            height: 280px;
+            width: 300px;
+            height: 300px;
+            animation: none;
+            transform: none;
         }
         
         .profile-image {
@@ -173,9 +213,13 @@
             height: 100%;
             border-radius: 16px;
             object-fit: cover;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             border: 4px solid var(--profile-image-border);
             transition: var(--transition);
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
         }
         
         .profile-info {
@@ -184,21 +228,41 @@
         }
         
         .profile-info h1 {
-            font-size: 3.5rem;
-            font-weight: 800; /* Bolder font */
+            font-size: 4rem;
+            font-weight: 900;
             margin-bottom: 0.5rem;
-            background: linear-gradient(90deg, #fff, #a5b4fc);
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.2;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .profile-info h2 {
             font-size: 1.5rem;
             font-weight: 500;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInDown 1s ease-out 0.2s backwards;
+        }
+
+        .profile-info > p {
+            font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease-out 0.4s backwards;
         }
         
         .contact-info {
@@ -214,11 +278,13 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             background: var(--contact-info-bg);
-            border-radius: 8px;
+            border-radius: 50px;
             transition: var(--transition);
             box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .contact-info a:hover {
@@ -234,13 +300,14 @@
             transform: translateX(-50%);
             animation: bounce 2s infinite;
             color: white;
-            font-size: 2.5rem; /* Larger icon */
+            font-size: 2.5rem;
             cursor: pointer;
             transition: var(--transition);
+            z-index: 10;
         }
 
         .scroll-down:hover {
-            color: var(--primary-color);
+            color: var(--accent-color);
             transform: translateY(-8px) translateX(-50%);
         }
         
@@ -262,12 +329,18 @@
             box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             transition: var(--transition);
+            backdrop-filter: blur(10px);
         }
         
         nav.scrolled {
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        body.dark-mode nav.scrolled {
+            background-color: rgba(55, 65, 81, 0.95);
         }
         
         .nav-container {
@@ -280,11 +353,16 @@
         }
         
         .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
+            font-weight: 800;
+            font-size: 1.75rem;
             color: var(--primary-color);
             text-decoration: none;
             padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
         
         nav ul {
@@ -311,10 +389,11 @@
             bottom: 0.75rem;
             left: 0.75rem;
             right: 0.75rem;
-            height: 2px;
-            background-color: var(--primary-color);
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             transform: scaleX(0);
             transition: var(--transition);
+            border-radius: 2px;
         }
         
         nav ul li a:hover, nav ul li a.active {
@@ -332,16 +411,23 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
         }
 
         .dark-mode-btn {
             background-color: transparent;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 0.5rem 1rem;
+            border: 2px solid var(--primary-color);
+            color: var (--primary-color);
+            padding: 0.5rem 1.25rem;
             border-radius: 50px;
             cursor: pointer;
             font-size: 0.9rem;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -351,12 +437,15 @@
         .dark-mode-btn:hover {
             background-color: var(--primary-color);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
         
         /* General Section Styling */
         section {
-            padding: 6rem 0;
+            padding: 7rem 0;
             transition: background-color 0.5s ease;
+            position: relative;
         }
         
         .container {
@@ -367,26 +456,28 @@
         
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: 800;
             color: var(--text-dark);
             position: relative;
             display: inline-block;
+            margin-bottom: 1rem;
         }
         
         .section-title h2::after {
             content: '';
             position: absolute;
             left: 50%;
-            bottom: -10px;
+            bottom: -15px;
             transform: translateX(-50%);
-            width: 50px;
-            height: 4px;
-            background: var(--primary-color);
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
         }
         
         /* About Section */
@@ -401,190 +492,276 @@
         }
         
         .about-text {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-light);
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            line-height: 1.8;
+            line-height: 1.9;
+            text-align: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
         }
         
         .skills-container {
-            margin-top: 4rem;
+            margin-top: 5rem;
         }
         
         .skills-container h3 {
-            font-size: 1.75rem;
+            font-size: 2rem;
             color: var(--text-dark);
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
         }
         
         .skills-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
         
         .skill-item {
             background-color: var(--bg-white);
-            padding: 2rem;
-            border-radius: 12px;
+            padding: 2.5rem;
+            border-radius: 16px;
             box-shadow: var(--shadow-md);
             transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
         }
         
         .skill-item:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             border-color: var(--primary-color);
         }
         
         .skill-item h4 {
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
         
         .skill-item h4::before {
             content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 8px;
-            height: 8px;
-            background-color: var(--primary-color);
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border-radius: 50%;
+            flex-shrink: 0;
         }
         
         .skill-item p {
             color: var(--text-light);
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 1.05rem;
         }
+
+        /* Combined and restructured the skills into three sections: Softwares, Engineering Equipments, and Engineering Competencies */
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* Updated skill items */
+        <div class="skill-item scale-in">
+            <h4>Softwares</h4>
+            <p>AutoCAD, Autodesk Revit, ETABS, STAAD Pro, Civil 3D, Lumion</p>
+        </div>
+        <div class="skill-item scale-in">
+            <h4>Engineering Equipments</h4>
+            <p>Total Station, Theodolite, Dumpy Level, Laser Level</p>
+        </div>
+        <div class="skill-item scale-in">
+            <h4>Engineering Competencies</h4>
+            <p>Concrete Slump tests, Compaction tests, Sieve analysis, CBR testing</p>
+        </div>
         
         /* Experience Section */
         #experience {
             background-color: var(--section-bg-even);
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
         }
 
-        .timeline {
+        .highway-journey {
             position: relative;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 4rem 0;
+            margin-top: 2rem;
+            overflow: hidden;
         }
 
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: var(--timeline-line-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: background-color 0.5s ease;
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
+        .highway {
             position: relative;
-            width: 50%;
-            padding: 1rem 2rem;
-            box-sizing: border-box;
+            height: 100px;
+            background: linear-gradient(180deg, #2d3748 0%, #1a202c 100%);
+            border-radius: 50px;
+            max-width: 90%;
+            margin: 0 auto 4rem;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .timeline-item.left {
-            justify-content: flex-end;
-            text-align: right;
-        }
-
-        .timeline-item.right {
-            justify-content: flex-start;
-            text-align: left;
-            left: 50%;
-        }
-
-        .timeline-item::before {
-            content: '';
+        .highway-line {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: var(--milestone-color);
-            border-radius: 50%;
-            top: 20px;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: repeating-linear-gradient(90deg, #f5f5f5 0px, #f5f5f5 50px, transparent 50px, transparent 100px);
+            transform: translateY(-50%);
             z-index: 1;
-            transform: translateX(-50%);
-            transition: background-color 0.5s ease;
+            animation: moveLine 8s linear infinite;
         }
 
-        .timeline-item.left::before {
-            right: -10px;
+        @keyframes moveLine {
+            0% { transform: translateX(0) translateY(-50%); }
+            100% { transform: translateX(-100px) translateY(-50%); }
         }
 
-        .timeline-item.right::before {
-            left: -10px;
-        }
-
-        .timeline-icon {
+        .vehicle {
             position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--milestone-color);
-            color: white;
-            width: 40px;
-            height: 40px;
+            top: 50%;
+            left: -100px;
+            width: 80px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 12px;
+            z-index: 2;
+            transform: translateY(-50%);
+            animation: driveVehicle 8s linear infinite;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+        }
+
+        .vehicle::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 18px;
+            width: 44px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .vehicle::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 18px;
+            width: 14px;
+            height: 14px;
+            background-color: #1a1a1a;
+            border-radius: 50%;
+            box-shadow: 34px 0 0 #1a1a1a;
+        }
+
+        @keyframes driveVehicle {
+            0% { left: -100px; }
+            100% { left: calc(100% + 100px); }
+        }
+
+        .journey-points {
+            position: relative;
+            margin-top: 6rem;
+            padding-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .journey-point {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5rem;
+            width: 100%;
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .journey-point:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .journey-point:last-child {
+            margin-bottom: 0;
+        }
+
+        .journey-milestone {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--milestone-color), var(--secondary-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            z-index: 2;
-            transition: background-color 0.5s ease;
+            color: white;
+            font-size: 2.2rem;
+            z-index: 3;
+            box-shadow: 0 0 0 10px var(--milestone-shadow), 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
         }
 
-        .timeline-content {
-            background-color: var(--timeline-item-bg);
-            padding: 2rem;
-            border-radius: 12px;
+        .journey-milestone:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 0 0 15px var(--milestone-shadow), 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .journey-content {
+            flex: 1;
+            padding: 2rem 2.5rem;
+            background-color: var(--bg-white);
+            border-radius: 20px;
             box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-            border: 1px solid rgba(0,0,0,0.05);
+            margin: 0 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-content h4 {
-            font-size: 1rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .timeline-content ul {
-            margin-left: 1.5rem;
-            color: var (--text-light);
-        }
-
-        .timeline-content ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-item:hover .timeline-content {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+        .journey-content:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
             border-color: var(--primary-color);
+        }
+
+        .journey-content h3 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .journey-content h4 {
+            color: var(--primary-color);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .journey-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
         }
         
         /* Projects Section */
@@ -594,30 +771,46 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
         
         .project-card {
             background-color: var(--bg-white);
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-md);
             transition: var(--transition);
             position: relative;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 2px solid transparent;
         }
         
         .project-card:hover {
             transform: translateY(-15px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             border-color: var(--primary-color);
         }
         
         .project-image-container {
             position: relative;
-            height: 240px;
+            height: 260px;
             overflow: hidden;
+        }
+
+        .project-image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image-container::after {
+            opacity: 1;
         }
         
         .project-image {
@@ -628,25 +821,36 @@
         }
         
         .project-card:hover .project-image {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         
         .project-info {
-            padding: 2rem;
+            padding: 2.5rem;
         }
         
         .project-date {
             color: var(--primary-color);
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-date::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
         }
         
         .project-info h3 {
             color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            font-weight: 600;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
         }
         
         .project-info ul {
@@ -655,7 +859,26 @@
         }
         
         .project-info ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+
+        .tab-button {
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            font-weight: 600;
+        }
+
+        .tab-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
         
         /* Education Section */
@@ -665,19 +888,19 @@
 
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
         }
         
         .education-item {
             background-color: var(--bg-white);
-            padding: 2.5rem;
-            border-radius: 16px;
+            padding: 3rem;
+            border-radius: 20px;
             box-shadow: var(--shadow-md);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 2px solid transparent;
         }
         
         .education-item::before {
@@ -685,156 +908,196 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 4px;
+            width: 6px;
             height: 100%;
-            background-color: var(--education-item-border);
+            background: linear-gradient(180deg, var(--education-item-border), var(--secondary-color));
             transition: var(--transition);
         }
         
         .education-item:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             border-color: var(--primary-color);
         }
         
         .education-item:hover::before {
-            width: 8px;
+            width: 10px;
         }
         
         .education-item h3 {
             color: var(--text-dark);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
-            font-weight: 600;
+            font-weight: 700;
         }
         
         .education-item p {
             color: var(--text-light);
             margin-bottom: 0.5rem;
+            line-height: 1.8;
         }
         
         .education-item .degree {
             color: var(--primary-color);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         
         .education-item .period {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
+            padding: 0.5rem 1.25rem;
             background-color: var(--education-period-bg);
             color: var(--primary-color);
             border-radius: 50px;
-            font-size: 0.9rem;
-            margin: 1rem 0;
+            font-size: 0.95rem;
+            margin: 1.25rem 0;
+            font-weight: 600;
         }
         
         .coursework {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid #e5e7eb;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid rgba(0,0,0,0.08);
         }
         
         .coursework h4 {
             color: var(--text-dark);
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
         }
         
         /* Leadership Section */
         #leadership {
-            background-color: var(--section-bg-light);
-            padding: 6rem 2rem;
+            background-color: var(--section-bg-odd);
+            padding: 7rem 2rem;
         }
 
         .leadership-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
         }
 
         .leadership-item {
-            background-color: var(--bg-white);
-            padding: 2.5rem;
-            border-radius: 16px;
+            background-color: var (--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
             box-shadow: var(--shadow-md);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+        }
+
+        .leadership-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.1;
+            border-radius: 0 0 0 100%;
+            transition: var(--transition);
         }
 
         .leadership-item:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            border-color: var (--primary-color);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-color);
+        }
+
+        .leadership-item:hover::before {
+            width: 150px;
+            height: 150px;
         }
 
         .leadership-item h3 {
             color: var(--text-dark);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .leadership-item .duration {
             color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
             display: block;
+            font-size: 1.05rem;
         }
 
         .leadership-item p {
             color: var(--text-light);
-            line-height: 1.8;
+            line-height: 1.9;
+            font-size: 1.05rem;
         }
 
         /* Contact Section */
         #contact {
-            background-color: var(--section-bg-odd);
+            background-color: var(--section-bg-even);
         }
         
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
         }
         
         .contact-info-container {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .contact-info-item {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background-color: var(--bg-white);
+            border-radius: 16px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-info-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--contact-icon-bg);
-            border-radius: 12px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--contact-icon-bg), rgba(16, 185, 129, 0.05));
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             flex-shrink: 0;
-            transition: background-color 0.5s ease;
+            transition: var(--transition);
+        }
+
+        .contact-info-item:hover .contact-icon {
+            transform: rotate(10deg) scale(1.1);
         }
         
         .contact-details h3 {
             color: var(--text-dark);
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
         
         .contact-details p, .contact-details a {
             color: var(--text-light);
             text-decoration: none;
             transition: var(--transition);
+            font-size: 1.05rem;
         }
         
         .contact-details a:hover {
@@ -842,75 +1105,81 @@
         }
         
         .contact-form {
-            background-color: var(--bg-white);
-            padding: 2.5rem;
-            border-radius: 16px;
+            background-color: var (--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
             box-shadow: var(--shadow-md);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .contact-form:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
             color: var(--text-dark);
+            font-size: 1.05rem;
         }
         
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--form-border);
-            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--form-border);
+            border-radius: 12px;
             font-family: inherit;
             font-size: 1rem;
             transition: var(--transition);
-            background-color: var(--bg-light); /* Match background */
+            background-color: var(--bg-light);
             color: var(--text-dark);
         }
         
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px var(--form-focus-shadow);
+            box-shadow: 0 0 0 4px var(--form-focus-shadow);
         }
         
         .form-group textarea {
             resize: vertical;
-            min-height: 150px;
+            min-height: 160px;
         }
         
         button {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            padding: 1rem 2rem;
+            border-radius: 50px;
             cursor: pointer;
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: 1.05rem;
+            font-weight: 600;
             transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            box-shadow: var(--shadow-sm);
+            gap: 0.75rem;
+            box-shadow: var(--shadow-md);
         }
         
         button:hover {
-            background-color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
         
         /* Footer */
         footer {
-            background-color: var(--bg-dark);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1e3a8a 100%);
             color: white;
             text-align: center;
-            padding: 3rem 0;
+            padding: 4rem 0;
             transition: background-color 0.5s ease;
         }
         
@@ -923,33 +1192,202 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         .social-links a {
             color: white;
-            font-size: 1.5rem;
-            width: 45px;
-            height: 45px;
+            font-size: 1.75rem;
+            width: 55px;
+            height: 55px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             transition: var(--transition);
+            backdrop-filter: blur(10px);
         }
         
         .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-5px);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
         
         .copyright {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
         }
         
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background-color: var (--bg-white);
+            margin: auto;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+            transform: scale(0.9);
+            opacity: 0;
+            animation: modal-appear 0.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+            color: var(--text-dark);
+        }
+
+        @keyframes modal-appear {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-button {
+            color: var(--text-light);
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            line-height: 1;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        .modal-content h3 {
+            color: var(--text-dark);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding-top: 1rem;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: var (--shadow-lg);
+        }
+
+        /* Message Box for Form Submission */
+        .message-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-xl);
+            z-index: 2001;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .message-box.show {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Floating Icons */
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-icons i {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.15;
+            animation: float-random 15s infinite ease-in-out;
+            color: var(--primary-color);
+        }
+
+        .floating-icons .fa-hard-hat { top: 10%; left: 15%; animation-delay: 0s; font-size: 2.8rem; color: #ff6b6b;}
+        .floating-icons .fa-drafting-compass { top: 30%; left: 45%; animation-delay: 2s; font-size: 2.2rem; color: #6b5b95;}
+        .floating-icons .fa-ruler-combined { top: 50%; left: 75%; animation-delay: 4s; font-size: 3rem; color: #88b04b;}
+        .floating-icons .fa-tools { top: 70%; left: 25%; animation-delay: 6s; font-size: 2.5rem; color: #f7cac9;}
+        .floating-icons .fa-building { top: 20%; left: 85%; animation-delay: 8s; font-size: 2.9rem; color: #92a8d1;}
+        .floating-icons .fa-bridge { top: 60%; left: 5%; animation-delay: 10s; font-size: 2.4rem; color: #ffcc5c;}
+        .floating-icons .fa-road { top: 40%; left: 95%; animation-delay: 12s; font-size: 2.6rem; color: #d5a6bd;}
+        .floating-icons .fa-compass { top: 80%; left: 55%; animation-delay: 14s; font-size: 3rem; color: #034f84;}
+        .floating-icons .fa-cogs { top: 15%; left: 65%; animation-delay: 16s; font-size: 2.3rem; color: #f7786b;}
+        .floating-icons .fa-wrench { top: 75%; left: 35%; animation-delay: 18s; font-size: 3.2rem; color: #c94c4c;}
+        .floating-icons .fa-truck { top: 25%; left: 30%; animation-delay: 20s; font-size: 2.7rem; color: #ff6f61;}
+        .floating-icons .fa-hammer { top: 65%; left: 70%; animation-delay: 22s; font-size: 2.5rem; color: #6b4226;}
+
+        @keyframes float-random {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -60px) rotate(20deg); }
+            50% { transform: translate(-100px, 100px) rotate(-20deg); }
+            75% { transform: translate(60px, -100px) rotate(15deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        /* Civil Engineering Watermarks */
+        .watermark-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .watermark {
+            position: absolute;
+            opacity: 0.05;
+            color: var(--text-light);
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .contact-grid {
@@ -983,6 +1421,7 @@
                 flex-direction: column;
                 box-shadow: var(--shadow-md);
                 z-index: 100;
+                backdrop-filter: blur(10px);
             }
             
             nav ul.active {
@@ -1003,70 +1442,53 @@
                 display: none;
             }
 
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::before {
-                left: 22px;
-            }
-            
-            .timeline-item.left::before {
-                right: auto;
-                left: 22px;
+            .journey-point {
+                flex-direction: column !important;
+                text-align: center;
             }
 
-            .timeline-item.right {
-                left: 0%;
+            .journey-content {
+                margin: 2rem 0 0 0 !important;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
             }
         }
         
         @media (max-width: 768px) {
             .profile-info h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
-            .section-title h2 {
-                font-size: 2rem;
+            section {
+                padding: 5rem 0;
             }
 
             .skills-list, .projects-grid, .education-grid, .leadership-grid {
                 grid-template-columns: 1fr;
             }
 
-            .timeline-item {
-                padding-left: 50px;
+            .highway {
+                height: 80px;
             }
 
-            .timeline::after {
-                left: 20px;
-            }
-
-            .timeline-item::before {
-                left: 10px;
-            }
-
-            .timeline-item.left::before {
-                left: 10px;
+            .vehicle {
+                width: 60px;
+                height: 38px;
             }
         }
 
         @media (max-width: 576px) {
             .profile-image-container {
-                width: 200px;
-                height: 200px;
+                width: 220px;
+                height: 220px;
             }
             .profile-info h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             .profile-info h2 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             .contact-info {
                 flex-direction: column;
@@ -1079,392 +1501,182 @@
             .scroll-down {
                 font-size: 2rem;
             }
-        }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
-            backdrop-filter: blur(8px); /* Subtle blur */
-            justify-content: center;
-            align-items: center;
-            padding: 1rem; /* Add padding for small screens */
-        }
-
-        .modal-content {
-            background-color: var(--bg-white);
-            margin: auto; /* Center vertically and horizontally */
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
-            width: 90%;
-            max-width: 800px;
-            position: relative;
-            transform: scale(0.95); /* Initial scale for animation */
-            opacity: 0; /* Initial opacity for animation */
-            animation: modal-appear 0.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-            color: var(--text-dark); /* Ensure text is readable */
-        }
-
-        @keyframes modal-appear {
-            to {
-                transform: scale(1);
-                opacity: 1;
+            .watermark {
+                opacity: 0.03;
             }
         }
 
-        .close-button {
-            color: var(--text-light); /* Use text-light for close button */
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .close-button:hover,
-        .close-button:focus {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-            gap: 10px;
-            padding-top: 1rem;
-        }
-
-        .photo-gallery img {
-            width: 100%;
-            height: auto; /* Adjust height based on image resolution */
-            object-fit: contain; /* Maintain aspect ratio */
-            border-radius: 8px;
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s ease;
-        }
-
-        .photo-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .tab-button {
-            margin-top: 1rem;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .tab-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Floating Icons */
-        .floating-icons {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%; /* Cover the entire header */
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0; /* Behind content */
-        }
-
-        .floating-icons i {
-            position: absolute;
-            font-size: 2rem; /* Larger size */
-            opacity: 0.9; /* Increased opacity to 90% */
-            animation: float-random 12s infinite ease-in-out; /* Adjusted duration for smoother motion */
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Specific colors for icons */
-        .floating-icons .fa-hard-hat { color: rgba(255, 107, 107, 0.6); }
-        .floating-icons .fa-drafting-compass { color: rgba(107, 91, 149, 0.6); }
-        .floating-icons .fa-ruler-combined { color: rgba(136, 176, 75, 0.6); }
-        .floating-icons .fa-tools { color: rgba(247, 202, 201, 0.6); }
-        .floating-icons .fa-building { color: rgba(146, 168, 209, 0.6); }
-        .floating-icons .fa-bridge { color: rgba(255, 204, 92, 0.6); }
-        .floating-icons .fa-road { color: rgba(213, 166, 189, 0.6); }
-        .floating-icons .fa-compass { color: rgba(3, 79, 132, 0.6); }
-        .floating-icons .fa-cogs { color: rgba(247, 120, 107, 0.6); }
-        .floating-icons .fa-wrench { color: rgba(201, 76, 76, 0.6); }
-        .floating-icons .fa-truck { color: rgba(255, 111, 97, 0.6); }
-        .floating-icons .fa-hammer { color: rgba(107, 66, 38, 0.6); }
-
-        /* Random positions and delays for icons */
-        .floating-icons .fa-hard-hat { top: 10%; left: 15%; animation-delay: 0s; font-size: 2.2rem;}
-        .floating-icons .fa-drafting-compass { top: 30%; left: 45%; animation-delay: 2s; font-size: 1.8rem;}
-        .floating-icons .fa-ruler-combined { top: 50%; left: 75%; animation-delay: 4s; font-size: 2.5rem;}
-        .floating-icons .fa-tools { top: 70%; left: 25%; animation-delay: 6s; font-size: 2rem;}
-        .floating-icons .fa-building { top: 20%; left: 85%; animation-delay: 8s; font-size: 2.3rem;}
-        .floating-icons .fa-bridge { top: 60%; left: 5%; animation-delay: 10s; font-size: 1.9rem;}
-        .floating-icons .fa-road { top: 40%; left: 95%; animation-delay: 12s; font-size: 2.1rem;}
-        .floating-icons .fa-compass { top: 80%; left: 55%; animation-delay: 14s; font-size: 2.4rem;}
-        .floating-icons .fa-cogs { top: 15%; left: 65%; animation-delay: 16s; font-size: 1.7rem;}
-        .floating-icons .fa-wrench { top: 75%; left: 35%; animation-delay: 18s; font-size: 2.6rem;}
-        .floating-icons .fa-truck { top: 25%; left: 30%; animation-delay: 20s; font-size: 2.2rem;}
-        .floating-icons .fa-hammer { top: 65%; left: 70%; animation-delay: 22s; font-size: 2.0rem;}
-
-        @keyframes float-random {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(80px, -50px) rotate(15deg); } /* Increased movement */
-            50% { transform: translate(-80px, 80px) rotate(-15deg); } /* Increased movement */
-            75% { transform: translate(50px, -80px) rotate(10deg); } /* Increased movement */
-            100% { transform: translate(0, 0) rotate(0deg); }
-        }
-
-
-
-        /* Highway Journey Styles */
-        .highway-journey {
-            position: relative;
-            padding: 4rem 0;
-            margin-top: 2rem;
-            overflow: hidden; /* To contain vehicle animation */
-        }
-
-        .highway {
-            position: relative;
-            height: 80px; /* Slightly smaller highway */
-            background-color: #333;
-            border-radius: 40px; /* Adjust border-radius */
-            max-width: 90%; /* Make it fluid */
-            margin: 0 auto;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .highway-line {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 8px; /* Thinner line */
-            background: repeating-linear-gradient(90deg, #f5f5f5 0px, #f5f5f5 40px, transparent 40px, transparent 80px); /* Shorter dashes */
-            transform: translateY(-50%);
-            z-index: 1;
-            animation: moveLine 10s linear infinite; /* Faster line movement */
-        }
-
-        .vehicle {
-            position: absolute;
-            top: 50%;
-            left: -80px; /* Start further off-screen */
-            width: 70px; /* Slightly larger car */
-            height: 45px; /* Slightly larger car */
-            background-color: var(--primary-color); /* Car color */
-            border-radius: 10px;
-            z-index: 2;
-            transform: translateY(-50%);
-            animation: driveVehicle 10s linear infinite; /* Faster car movement */
-            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-        }
-
-        .vehicle::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 15px; /* Adjust position */
-            width: 40px; /* Adjust size */
-            height: 20px; /* Adjust size */
-            background-color: var(--primary-color);
-            border-radius: 10px 10px 0 0;
-        }
-
-        .vehicle::after {
-            content: '';
-            position: absolute;
-            bottom: -8px; /* Adjust position */
-            left: 15px; /* Adjust position */
-            width: 12px; /* Adjust size */
-            height: 12px; /* Adjust size */
-            background-color: #222;
-            border-radius: 50%;
-            box-shadow: 30px 0 0 #222; /* Second wheel */
-        }
-
-        .journey-points {
-            position: relative;
-            margin-top: 6rem;
-            padding-bottom: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center points */
-        }
-
-        .journey-point {
-            position: relative;
-            display: flex;
-            align-items: center; /* Align content with milestone */
-            margin-bottom: 4rem; /* Reduced margin */
-            width: 100%;
-            max-width: 800px; /* Max width for content */
-            z-index: 2;
-        }
-
-        .journey-point:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .journey-point:last-child {
-            margin-bottom: 0;
-        }
-
-        .journey-milestone {
-            position: relative;
-            width: 80px; /* Smaller milestone */
-            height: 80px;
-            background-color: var(--milestone-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem; /* Smaller icon */
-            z-index: 3;
-            box-shadow: 0 0 0 8px var(--milestone-shadow), 0 5px 15px rgba(0, 0, 0, 0.2); /* Smaller shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
-            flex-shrink: 0; /* Prevent shrinking */
-        }
-
-        .journey-milestone:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 0 12px var(--milestone-shadow), 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .journey-content {
-            flex: 1;
-            padding: 1.5rem; /* Reduced padding */
-            background-color: var(--bg-white);
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            margin: 0 1.5rem; /* Reduced margin */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .journey-content:hover {
-            transform: translateY(-8px); /* Slightly less movement */
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-color);
-        }
-
-        .journey-content h3 {
-            color: var(--text-dark);
-            font-size: 1.3rem; /* Slightly smaller font */
-            margin-bottom: 0.5rem;
-        }
-
-        .journey-content h4 {
-            color: var(--primary-color);
-            font-size: 0.9rem; /* Slightly smaller font */
-            margin-bottom: 0.8rem;
-        }
-
-        .journey-content p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-
-        /* Animation for car movement */
-        @keyframes driveVehicle {
-            0% {
-                left: -80px;
-            }
-            100% {
-                left: calc(100% + 80px); /* Ensure it goes completely off-screen */
-            }
-        }
-
-        /* Message Box for Form Submission */
-        .message-box {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
-            z-index: 1001;
-            text-align: center;
-            font-size: 1.1rem;
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
-        }
-
-        .message-box.show {
-            display: block;
-            opacity: 1;
-        }
-
-        .watermark-container {
+        /* Scroll Progress Bar */
+        .scroll-progress {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; /* Prevent interaction with watermarks */
-            z-index: -1; /* Place behind all content */
-        }
-
-        .watermark {
-            position: absolute;
-            opacity: 0.1; /* Low opacity for watermark effect */
-            width: 150px; /* Adjust size */
-            height: auto;
-        }
-
-        /* Scatter the watermarks */
-        .watermark:nth-child(1) {
-            top: 10%;
-            left: 5%;
-        }
-
-        .watermark:nth-child(2) {
-            top: 50%;
-            left: 10%;
-        }
-
-        .watermark:nth-child(3) {
-            top: 80%;
-            right: 5%;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            z-index: 9999;
+            transition: width 0.1s ease;
         }
     </style>
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Crosshair elements -->
     <div class="crosshair-horizontal"></div>
     <div class="crosshair-vertical"></div>
+
+    <!-- Civil Engineering Watermarks -->
+    <div class="watermark-container">
+        <!-- Bending Moment Diagram -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 5%; left: 8%;">
+            <path d="M20,120 L180,120" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M20,120 Q60,80 100,120 T180,120" stroke="currentColor" stroke-width="2" fill="none"/>
+            <line x1="60" y1="120" x2="60" y2="80" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="140" y1="120" x2="140" y2="80" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="100" y="65" font-size="12" text-anchor="middle" fill="currentColor" font-weight="bold">M</text>
+        </svg>
+
+        <!-- Shear Force Diagram -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 45%; left: 15%;">
+            <path d="M20,120 L180,120" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M20,100 L60,100 L60,140 L140,140 L140,100 L180,100" stroke="currentColor" stroke-width="2" fill="none"/>
+            <line x1="60" y1="100" x2="60" y2="140" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="140" y1="100" x2="140" y2="140" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="100" y="60" font-size="12" text-anchor="middle" fill="currentColor" font-weight="bold">V</text>
+        </svg>
+
+        <!-- Truss Structure -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 75%; right: 12%;">
+            <line x1="20" y1="120" x2="180" y2="120" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="20" y1="120" x2="100" y2="40" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="180" y1="120" x2="100" y2="40" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="20" y1="120" x2="60" y2="80" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="60" y1="80" x2="100" y2="40" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="60" y1="80" x2="140" y2="80" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="140" y1="80" x2="100" y2="40" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="140" y1="80" x2="180" y2="120" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="20" cy="120" r="4" fill="currentColor"/>
+            <circle cx="60" cy="80" r="4" fill="currentColor"/>
+            <circle cx="100" cy="40" r="4" fill="currentColor"/>
+            <circle cx="140" cy="80" r="4" fill="currentColor"/>
+            <circle cx="180" cy="120" r="4" fill="currentColor"/>
+        </svg>
+
+        <!-- Superelevation Diagram -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 25%; right: 8%;">
+            <path d="M20,100 L180,100" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M20,100 Q60,95 100,85 T180,75" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="100" y1="85" x2="100" y2="100" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,4"/>
+            <text x="110" y="92" font-size="10" fill="currentColor" font-weight="bold">e</text>
+            <line x1="30" y1="50" x2="30" y2="110" stroke="currentColor" stroke-width="2"/>
+            <line x1="25" y1="53" x2="30" y2="50" stroke="currentColor" stroke-width="2"/>
+            <line x1="35" y1="53" x2="30" y2="50" stroke="currentColor" stroke-width="2"/>
+            <text x="12" y="80" font-size="10" fill="currentColor" font-weight="bold">CL</text>
+        </svg>
+
+        <!-- Simply Supported Beam -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 60%; right: 25%;">
+            <line x1="40" y1="80" x2="160" y2="80" stroke="currentColor" stroke-width="4"/>
+            <polygon points="40,80 30,95 50,95" fill="currentColor"/>
+            <circle cx="160" cy="87" r="8" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="100" y1="45" x2="100" y2="80" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="95" y1="50" x2="100" y2="45" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="105" y1="50" x2="100" y2="45" stroke="currentColor" stroke-width="2.5"/>
+            <text x="100" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">P</text>
+        </svg>
+
+        <!-- Cantilever Beam -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 85%; left: 25%;">
+            <rect x="20" y="60" width="18" height="50" fill="currentColor"/>
+            <line x1="38" y1="85" x2="160" y2="85" stroke="currentColor" stroke-width="4"/>
+            <line x1="160" y1="50" x2="160" y2="85" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="155" y1="55" x2="160" y2="50" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="165" y1="55" x2="160" y2="50" stroke="currentColor" stroke-width="2.5"/>
+            <text x="160" y="40" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">W</text>
+        </svg>
+
+        <!-- Column with Load -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 12%; left: 82%;">
+            <rect x="85" y="40" width="30" height="80" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="70" y1="120" x2="130" y2="120" stroke="currentColor" stroke-width="4"/>
+            <line x1="100" y1="15" x2="100" y2="40" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="95" y1="20" x2="100" y2="15" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="105" y1="20" x2="100" y2="15" stroke="currentColor" stroke-width="2.5"/>
+            <text x="100" y="10" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">P</text>
+        </svg>
+
+        <!-- Distributed Load -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 40%; left: 72%;">
+            <line x1="40" y1="100" x2="160" y2="100" stroke="currentColor" stroke-width="4"/>
+            <line x1="40" y1="50" x2="40" y2="100" stroke="currentColor" stroke-width="2"/>
+            <line x1="60" y1="50" x2="60" y2="100" stroke="currentColor" stroke-width="2"/>
+            <line x1="80" y1="50" x2="80" y2="100" stroke="currentColor" stroke-width="2"/>
+            <line x1="100" y1="50" x2="100" y2="100" stroke="currentColor" stroke-width="2"/>
+            <line x1="120" y1="50" x2="120" y2="100" stroke="currentColor" stroke-width="2"/>
+            <line x1="140" y1="50" x2="140" y2="100" stroke="currentColor" stroke-width="2"/>
+            <line x1="160" y1="50" x2="160" y2="100" stroke="currentColor" stroke-width="2"/>
+            <polygon points="40,50 35,56 45,56" fill="currentColor"/>
+            <polygon points="60,50 55,56 65,56" fill="currentColor"/>
+            <polygon points="80,50 75,56 85,56" fill="currentColor"/>
+            <polygon points="100,50 95,56 105,56" fill="currentColor"/>
+            <polygon points="120,50 115,56 125,56" fill="currentColor"/>
+            <polygon points="140,50 135,56 145,56" fill="currentColor"/>
+            <polygon points="160,50 155,56 165,56" fill="currentColor"/>
+            <text x="100" y="35" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">w</text>
+        </svg>
+
+        <!-- Moment Diagram Curve -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 90%; right: 18%;">
+            <path d="M30,120 L170,120" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M30,120 Q100,60 170,120" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="100" y1="60" x2="100" y2="120" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,4"/>
+            <text x="100" y="50" font-size="11" text-anchor="middle" fill="currentColor" font-weight="bold">Mmax</text>
+        </svg>
+
+        <!-- Deflection Curve -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 18%; left: 40%;">
+            <line x1="30" y1="80" x2="170" y2="80" stroke="currentColor" stroke-width="2" stroke-dasharray="5,5"/>
+            <path d="M30,80 Q100,110 170,80" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="100" y1="80" x2="100" y2="110" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <text x="105" y="100" font-size="10" fill="currentColor" font-weight="bold">δ</text>
+        </svg>
+
+        <!-- Fixed Support -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 55%; left: 50%;">
+            <rect x="25" y="60" width="20" height="60" fill="currentColor"/>
+            <line x1="45" y1="90" x2="150" y2="90" stroke="currentColor" stroke-width="4"/>
+            <line x1="20" y1="55" x2="20" y2="125" stroke="currentColor" stroke-width="3"/>
+            <line x1="20" y1="60" x2="15" y2="65" stroke="currentColor" stroke-width="2"/>
+            <line x1="20" y1="75" x2="15" y2="80" stroke="currentColor" stroke-width="2"/>
+            <line x1="20" y1="90" x2="15" y2="95" stroke="currentColor" stroke-width="2"/>
+            <line x1="20" y1="105" x2="15" y2="110" stroke="currentColor" stroke-width="2"/>
+            <line x1="20" y1="120" x2="15" y2="125" stroke="currentColor" stroke-width="2"/>
+        </svg>
+
+        <!-- I-Beam Section -->
+        <svg class="watermark" viewBox="0 0 200 150" width="200" height="150" style="top: 68%; left: 88%;">
+            <rect x="70" y="40" width="60" height="12" fill="currentColor"/>
+            <rect x="95" y="52" width="10" height="46" fill="currentColor"/>
+            <rect x="70" y="98" width="60" height="12" fill="currentColor"/>
+        </svg>
+    </div>
 
     <header>
         <div class="header-content">
             <div class="profile-section fade-in-up">
                 <div class="profile-image-container">
-                    <img src="./profile.jpg" alt="Rohit Shah" class="profile-image"> <!-- Updated to use local profile.jpg -->
+                    <img src="./profile.jpg" alt="Rohit Shah" class="profile-image">
                 </div>
                 <div class="profile-info">
                     <h1>Rohit Shah</h1>
-                    <h2>Civil Engineer & Infrastructure Designer</h2>
+                    <h2>Civil Engineering Student at San Francisco State University</h2>
                     <p>Building sustainable infrastructure through innovative design and precise execution</p>
                     <div class="contact-info">
                         <a href="tel:628-235-9113"><i class="fas fa-phone"></i> 628-235-9113</a>
@@ -1473,9 +1685,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="scroll-helmet" class="scroll-helmet">
-            <i class="fas fa-hard-hat"></i>
         </div>
         <div class="scroll-down" id="scrollDown">
             <i class="fas fa-chevron-down"></i>
@@ -1518,21 +1727,20 @@
                         <h3>Technical Expertise</h3>
                         <div class="skills-list">
                             <div class="skill-item scale-in">
-                                <h4>Design Software</h4>
-                                <p>AutoCAD, Autodesk Revit, ETABS, Lumion, Adobe Photoshop, Adobe AfterEffect</p>
+                                <h4>Softwares</h4>
+                                <p>AutoCAD, Autodesk Revit, ETABS, STAAD Pro, Civil 3D, Lumion, Microsoft Office, Adobe Photoshop</p>
+                            </div>
+                            <div class="skill-item scale-in">
+                                <h4>Engineering Equipments</h4>
+                                <p>Total Station, Theodolite, Dumpy (Auto) Level, Laser Level</p>
                             </div>
                             <div class="skill-item scale-in">
                                 <h4>Engineering Competencies</h4>
-                                <p>Contract management, Site execution, Construction management, Estimating Costing, Surveying</p>
-                            </div>
-                            <div class="skill-item scale-in">
-                                <h4>Technical Equipment</h4>
-                                <p>Dumpy Level, Theodolite, Total Station, Alidade, Mini Drafter</p>
+                                <p>Concrete Slump tests, Compaction tests, Sieve analysis, Brinell Test, Instron Tensile Test, Tinius Olsen Impact Test</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Move floating icons here -->
                 <div class="floating-icons">
                     <i class="fas fa-hard-hat"></i>
                     <i class="fas fa-drafting-compass"></i>
@@ -1608,7 +1816,7 @@
                 <div class="projects-grid">
                     <div class="project-card scale-in">
                         <div class="project-image-container">
-                            <img src="./kcf.jpg" alt="Kalash Cattle Farm" class="project-image"> <!-- Updated to use local kcf.jpg -->
+                            <img src="./kcf.jpg" alt="Kalash Cattle Farm" class="project-image">
                         </div>
                         <div class="project-info">
                             <div class="project-date">Feb 2021 – July 2021</div>
@@ -1627,15 +1835,16 @@
                             <span class="close-button" onclick="closeModal('kalash-photos-modal')">&times;</span>
                             <h3>Kalash Cattle Farm Photos</h3>
                             <div class="photo-gallery">
-                                <img src="./k1.jpg" alt="Farm Photo 1"> <!-- Updated to use local k1.jpg -->
-                                <img src="./k2.jpg" alt="Farm Photo 2"> <!-- Updated to use local k2.jpg -->
-                                <img src="./k3.jpg" alt="Farm Photo 3"> <!-- Updated to use local k3.jpg -->
+                                <img src="./k1.jpg" alt="Farm Photo 1">
+                                <img src="./k2.jpg" alt="Farm Photo 2">
+                                <img src="./k3.jpg" alt="Farm Photo 3">
                             </div>
                         </div>
                     </div>
+
                     <div class="project-card scale-in">
                         <div class="project-image-container">
-                            <img src="./3d.jpg" alt="3D Drawing Project" class="project-image"> <!-- Updated to use local 3d.jpg -->
+                            <img src="./3d.jpg" alt="3D Drawing Project" class="project-image">
                         </div>
                         <div class="project-info">
                             <div class="project-date">May 2021 – June 2021</div>
@@ -1654,14 +1863,15 @@
                             <span class="close-button" onclick="closeModal('3d-drawing-modal')">&times;</span>
                             <h3>3D Drawing Project Photos</h3>
                             <div class="photo-gallery">
-                                <img src="./3d1.jpg" alt="3D Drawing Photo 1"> <!-- Updated to use local 3d1.jpg -->
-                                <img src="./3d2.jpg" alt="3D Drawing Photo 2"> <!-- Updated to use local 3d2.jpg -->
+                                <img src="./3d1.jpg" alt="3D Drawing Photo 1">
+                                <img src="./3d2.jpg" alt="3D Drawing Photo 2">
                             </div>
                         </div>
                     </div>
+
                     <div class="project-card scale-in">
                         <div class="project-image-container">
-                            <img src="./2.jpg" alt="Engineering Transportation Term Project" class="project-image"> <!-- Updated to use local 2.jpg -->
+                            <img src="./2.jpg" alt="Engineering Transportation Term Project" class="project-image">
                         </div>
                         <div class="project-info">
                             <div class="project-date">Fall 2024</div>
@@ -1690,17 +1900,17 @@
 
                         <div class="coursework">
                             <h4>Key Coursework:</h4>
-                            <p>Structural Analysis, Fluid Mechanics, Geotechnical Engineering, Transportation Engineering</p>
+                            <p>Structural Analysis, Fluid Mechanics, Geotechnical Engineering, Transportation Engineering, AutoCAD, Autodesk Revit, ETABS, STAAD Pro, Civil 3D, Lumion</p>
                         </div>
                     </div>
                     <div class="education-item scale-in">
-                        <h3>Tri Juddha Mahabir Pradsad Raghubir Ram Technical Secondary School (Nepal Education Board)</h3>
+                        <h3>Tri Juddha Mahabir Pradsad Raghubir Ram Technical Secondary School</h3>
                         <p class="degree">Diploma High School in Civil Engineering</p>
                         <span class="period">2018 - 2021</span>
                         
                         <div class="coursework">
                             <h4>Key Coursework:</h4>
-                            <p>Engineering Mechanics, Surveying, Construction Technology, Engineering Drawing</p>
+                            <p>Engineering Mechanics, Surveying, Construction Technology, Engineering Drawing, Total Station, Theodolite, Dumpy Level, Laser Level, Concrete Slump tests, Compaction tests, Sieve analysis, CBR testing</p>
                         </div>
                     </div>
                 </div>
@@ -1715,12 +1925,12 @@
                 <div class="leadership-grid">
                     <div class="leadership-item scale-in">
                         <h3>OJT 2018</h3>
-                        <p class="duration">41 Working Days</p>
+                        <span class="duration">41 Working Days</span>
                         <p>Led a team of 15 members during a 41-day On-the-Job Training (OJT) program. Successfully managed tasks, ensured team collaboration, and delivered results on time while maintaining high-quality standards.</p>
                     </div>
                     <div class="leadership-item scale-in">
                         <h3>OJT 2021</h3>
-                        <p class="duration">64 Working Days</p>
+                        <span class="duration">64 Working Days</span>
                         <p>Led a team of 14 members during a 64-day On-the-Job Training (OJT) program. Focused on efficient task delegation, team motivation, and achieving project milestones within the stipulated timeframe.</p>
                     </div>
                 </div>
@@ -1825,7 +2035,7 @@
         // Scroll down button
         document.getElementById('scrollDown').addEventListener('click', () => {
             window.scrollBy({
-                top: window.innerHeight - 100, // Scroll down by roughly one screen height
+                top: window.innerHeight - 100,
                 behavior: 'smooth'
             });
         });
@@ -1840,13 +2050,21 @@
             }
         });
 
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPosition = window.scrollY;
+            const progress = (scrollPosition / scrollTotal) * 100;
+            scrollProgress.style.width = progress + '%';
+        });
+
         // Modal functionality
         function openModal(id) {
             const modal = document.getElementById(id);
-            modal.style.display = "flex"; // Show the modal
-            document.body.style.overflow = "hidden"; // Disable scrolling
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
 
-            // Add event listener to close modal when clicking outside the content
             modal.addEventListener('click', (event) => {
                 if (event.target === modal) {
                     closeModal(id);
@@ -1856,31 +2074,14 @@
 
         function closeModal(id) {
             const modal = document.getElementById(id);
-            modal.style.display = "none"; // Hide the modal
-            document.body.style.overflow = "auto"; // Enable scrolling
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
         }
-
-        // Helmet icon scroll effect
-        const scrollHelmet = document.getElementById('scroll-helmet');
-        const header = document.querySelector('header');
-
-        window.addEventListener('scroll', () => {
-            const headerBottom = header.offsetTop + header.offsetHeight;
-            const scrollPosition = window.scrollY;
-
-            // Show helmet when scrolled past the header
-            if (scrollPosition > headerBottom - 100) { // Adjust 100px for earlier appearance
-                scrollHelmet.classList.add('visible');
-            } else {
-                scrollHelmet.classList.remove('visible');
-            }
-        });
 
         // Dark Mode Toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
 
-        // Check for saved dark mode preference
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
             darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
@@ -1905,34 +2106,31 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Stop observing once animated
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.1, // Trigger when 10% of the element is visible
-            rootMargin: '0px 0px -50px 0px' // Adjust when elements appear
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         });
 
         animateOnScrollElements.forEach(element => {
             observer.observe(element);
         });
 
-        // Contact Form Submission (Simple Message Box)
+        // Contact Form Submission
         const contactForm = document.getElementById('contactForm');
         const messageBox = document.getElementById('messageBox');
 
         contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent actual form submission
+            event.preventDefault();
 
-            // Display message box
             messageBox.classList.add('show');
 
-            // Hide message box after 3 seconds
             setTimeout(() => {
                 messageBox.classList.remove('show');
             }, 3000);
 
-            // Optionally clear the form
             contactForm.reset();
         });
 
@@ -1945,7 +2143,7 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - sectionHeight / 3) { // Adjust sensitivity
+                if (scrollY >= sectionTop - sectionHeight / 3) {
                     current = section.getAttribute('id');
                 }
             });
@@ -1964,19 +2162,9 @@
 
         window.addEventListener('mousemove', (event) => {
             const { clientX, clientY } = event;
-
-            // Position the horizontal line at the cursor's Y position
             horizontalLine.style.top = `${clientY}px`;
-
-            // Position the vertical line at the cursor's X position
             verticalLine.style.left = `${clientX}px`;
         });
     </script>
-
-    <div class="watermark-container">
-        <img src="./assets/watermarks/watermark1.png" alt="Watermark 1" class="watermark">
-        <img src="./assets/watermarks/watermark2.png" alt="Watermark 2" class="watermark">
-        <img src="./assets/watermarks/watermark3.png" alt="Watermark 3" class="watermark">
-    </div>
-</html></body></body>
+</body>
 </html>
